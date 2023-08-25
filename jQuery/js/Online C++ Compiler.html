@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://www.online-cpp.com/online_c++_compiler -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="ace-tomorrow-night-bright">.ace-tomorrow-night-bright .ace_gutter {background: #1a1a1a;color: #DEDEDE}.ace-tomorrow-night-bright .ace_print-margin {width: 1px;background: #1a1a1a}.ace-tomorrow-night-bright {background-color: #000000;color: #DEDEDE}.ace-tomorrow-night-bright .ace_cursor {color: #9F9F9F}.ace-tomorrow-night-bright .ace_marker-layer .ace_selection {background: #424242}.ace-tomorrow-night-bright.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #000000;}.ace-tomorrow-night-bright .ace_marker-layer .ace_step {background: rgb(102, 82, 0)}.ace-tomorrow-night-bright .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #888888}.ace-tomorrow-night-bright .ace_marker-layer .ace_highlight {border: 1px solid rgb(110, 119, 0);border-bottom: 0;box-shadow: inset 0 -1px rgb(110, 119, 0);margin: -1px 0 0 -1px;background: rgba(255, 235, 0, 0.1)}.ace-tomorrow-night-bright .ace_marker-layer .ace_active-line {background: #2A2A2A}.ace-tomorrow-night-bright .ace_gutter-active-line {background-color: #2A2A2A}.ace-tomorrow-night-bright .ace_stack {background-color: rgb(66, 90, 44)}.ace-tomorrow-night-bright .ace_marker-layer .ace_selected-word {border: 1px solid #888888}.ace-tomorrow-night-bright .ace_invisible {color: #343434}.ace-tomorrow-night-bright .ace_keyword,.ace-tomorrow-night-bright .ace_meta,.ace-tomorrow-night-bright .ace_storage,.ace-tomorrow-night-bright .ace_storage.ace_type,.ace-tomorrow-night-bright .ace_support.ace_type {color: #C397D8}.ace-tomorrow-night-bright .ace_keyword.ace_operator {color: #70C0B1}.ace-tomorrow-night-bright .ace_constant.ace_character,.ace-tomorrow-night-bright .ace_constant.ace_language,.ace-tomorrow-night-bright .ace_constant.ace_numeric,.ace-tomorrow-night-bright .ace_keyword.ace_other.ace_unit,.ace-tomorrow-night-bright .ace_support.ace_constant,.ace-tomorrow-night-bright .ace_variable.ace_parameter {color: #E78C45}.ace-tomorrow-night-bright .ace_constant.ace_other {color: #EEEEEE}.ace-tomorrow-night-bright .ace_invalid {color: #CED2CF;background-color: #DF5F5F}.ace-tomorrow-night-bright .ace_invalid.ace_deprecated {color: #CED2CF;background-color: #B798BF}.ace-tomorrow-night-bright .ace_fold {background-color: #7AA6DA;border-color: #DEDEDE}.ace-tomorrow-night-bright .ace_entity.ace_name.ace_function,.ace-tomorrow-night-bright .ace_support.ace_function,.ace-tomorrow-night-bright .ace_variable {color: #7AA6DA}.ace-tomorrow-night-bright .ace_support.ace_class,.ace-tomorrow-night-bright .ace_support.ace_type {color: #E7C547}.ace-tomorrow-night-bright .ace_heading,.ace-tomorrow-night-bright .ace_markup.ace_heading,.ace-tomorrow-night-bright .ace_string {color: #B9CA4A}.ace-tomorrow-night-bright .ace_entity.ace_name.ace_tag,.ace-tomorrow-night-bright .ace_entity.ace_other.ace_attribute-name,.ace-tomorrow-night-bright .ace_meta.ace_tag,.ace-tomorrow-night-bright .ace_string.ace_regexp,.ace-tomorrow-night-bright .ace_variable {color: #D54E53}.ace-tomorrow-night-bright .ace_comment {color: #969896}.ace-tomorrow-night-bright .ace_c9searchresults.ace_keyword {color: #C2C280}.ace-tomorrow-night-bright .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWNgYGBgYFBXV/8PAAJoAXX4kT2EAAAAAElFTkSuQmCC) right repeat-y}
+/*# sourceURL=ace/css/ace-tomorrow-night-bright */</style><style>#ace_settingsmenu, #kbshortcutmenu {background-color: #F7F7F7;color: black;box-shadow: -5px 4px 5px rgba(126, 126, 126, 0.55);padding: 1em 0.5em 2em 1em;overflow: auto;position: absolute;margin: 0;bottom: 0;right: 0;top: 0;z-index: 9991;cursor: default;}.ace_dark #ace_settingsmenu, .ace_dark #kbshortcutmenu {box-shadow: -20px 10px 25px rgba(126, 126, 126, 0.25);background-color: rgba(255, 255, 255, 0.6);color: black;}.ace_optionsMenuEntry:hover {background-color: rgba(100, 100, 100, 0.1);transition: all 0.3s}.ace_closeButton {background: rgba(245, 146, 146, 0.5);border: 1px solid #F48A8A;border-radius: 50%;padding: 7px;position: absolute;right: -8px;top: -8px;z-index: 100000;}.ace_closeButton{background: rgba(245, 146, 146, 0.9);}.ace_optionsMenuKey {color: darkslateblue;font-weight: bold;}.ace_optionsMenuCommand {color: darkcyan;font-weight: normal;}.ace_optionsMenuEntry input, .ace_optionsMenuEntry button {vertical-align: middle;}.ace_optionsMenuEntry button[ace_selected_button=true] {background: #e7e7e7;box-shadow: 1px 0px 2px 0px #adadad inset;border-color: #adadad;}.ace_optionsMenuEntry button {background: white;border: 1px solid lightgray;margin: 0px;}.ace_optionsMenuEntry button:hover{background: #f0f0f0;}</style><style id="autocompletion.css">.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {    background-color: #CAD6FA;    z-index: 1;}.ace_dark.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {    background-color: #3a674e;}.ace_editor.ace_autocomplete .ace_line-hover {    border: 1px solid #abbffe;    margin-top: -1px;    background: rgba(233,233,253,0.4);    position: absolute;    z-index: 2;}.ace_dark.ace_editor.ace_autocomplete .ace_line-hover {    border: 1px solid rgba(109, 150, 13, 0.8);    background: rgba(58, 103, 78, 0.62);}.ace_completion-meta {    opacity: 0.5;    margin: 0.9em;}.ace_completion-message {    color: blue;}.ace_editor.ace_autocomplete .ace_completion-highlight{    color: #2d69c7;}.ace_dark.ace_editor.ace_autocomplete .ace_completion-highlight{    color: #93ca12;}.ace_editor.ace_autocomplete {    width: 300px;    z-index: 200000;    border: 1px lightgray solid;    position: fixed;    box-shadow: 2px 3px 5px rgba(0,0,0,.2);    line-height: 1.4;    background: #fefefe;    color: #111;}.ace_dark.ace_editor.ace_autocomplete {    border: 1px #484747 solid;    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.51);    line-height: 1.4;    background: #25282c;    color: #c1c1c1;}
+/*# sourceURL=ace/css/autocompletion.css */</style><style>.ace_snippet-marker {    -moz-box-sizing: border-box;    box-sizing: border-box;    background: rgba(194, 193, 208, 0.09);    border: 1px dotted rgba(211, 208, 235, 0.62);    position: absolute;}</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style id="ace_editor.css">.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}.ace_editor {position: relative;overflow: hidden;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;text-align: left;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;box-sizing: border-box;min-width: 100%;contain: style size layout;font-variant-ligatures: no-common-ligatures;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;contain: style size layout;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {position: absolute;top: 0;left: 0;right: 0;padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {contain: strict;position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;contain: strict;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: transparent;color: inherit;z-index: 1000;opacity: 1;}.ace_composition_placeholder { color: transparent }.ace_composition_marker { border-bottom: 1px solid;position: absolute;border-radius: 0;margin-top: 1px;}[ace_nocontext=true] {transform: none!important;filter: none!important;clip-path: none!important;mask : none!important;contain: none!important;perspective: none!important;mix-blend-mode: initial!important;z-index: auto;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;height: 1000000px;contain: style size layout;}.ace_text-layer {font: inherit !important;position: absolute;height: 1000000px;width: 1000000px;contain: style size layout;}.ace_text-layer > .ace_line, .ace_text-layer > .ace_line_group {contain: style size layout;position: absolute;top: 0;left: 0;right: 0;}.ace_hidpi .ace_text-layer,.ace_hidpi .ace_gutter-layer,.ace_hidpi .ace_content,.ace_hidpi .ace_gutter {contain: strict;will-change: transform;}.ace_hidpi .ace_text-layer > .ace_line, .ace_hidpi .ace_text-layer > .ace_line_group {contain: strict;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_hasPlaceholder .ace_hidden-cursors .ace_cursor {opacity: 0;}.ace_smooth-blinking .ace_cursor {transition: opacity 0.18s;}.ace_animate-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: step-end;animation-name: blink-ace-animate;animation-iteration-count: infinite;}.ace_animate-blinking.ace_smooth-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: ease-in-out;animation-name: blink-ace-animate-smooth;}@keyframes blink-ace-animate {from, to { opacity: 1; }60% { opacity: 0; }}@keyframes blink-ace-animate-smooth {from, to { opacity: 1; }45% { opacity: 1; }60% { opacity: 0; }85% { opacity: 0; }}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_error_bracket {position: absolute;border-bottom: 1px solid #DE5555;border-radius: 0;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;box-sizing: border-box;}.ace_line .ace_fold {box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_inline_button {border: 1px solid lightgray;display: inline-block;margin: -1px 8px;padding: 0 5px;pointer-events: auto;cursor: pointer;}.ace_inline_button:hover {border-color: gray;background: rgba(200,200,200,0.2);display: inline-block;pointer-events: auto;}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_mobile-menu {position: absolute;line-height: 1.5;border-radius: 4px;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;background: white;box-shadow: 1px 3px 2px grey;border: 1px solid #dcdcdc;color: black;}.ace_dark > .ace_mobile-menu {background: #333;color: #ccc;box-shadow: 1px 3px 2px grey;border: 1px solid #444;}.ace_mobile-button {padding: 2px;cursor: pointer;overflow: hidden;}.ace_mobile-button:hover {background-color: #eee;opacity:1;}.ace_mobile-button:active {background-color: #ddd;}.ace_placeholder {font-family: arial;transform: scale(0.9);transform-origin: left;white-space: pre;opacity: 0.7;margin: 0 10px;}
+/*# sourceURL=ace/css/ace_editor.css */</style>
+    <title>Online C++ Compiler</title>
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <meta name="description" content="Compile and Execute your C++ programs online. OnlineCPP is a quick and easy tool that helps you to build, compile, test your programs.">
+    <meta name="keywords" content="online c++ compiler, online c++ compiler gcc, compile c++ program, compile c++ program online, compile c++ code, compile c++ online">
+    <meta name="author" content="online-ide.com">
+    <meta name="copyright" content="ShareAlike">
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+
+    <link rel="icon" type="image/png" href="https://www.online-cpp.com/favicon.png">
+    <link rel="stylesheet" href="./Online C++ Compiler_files/dropdown.min.css">
+    <link rel="stylesheet" href="./Online C++ Compiler_files/transition.min.css">
+    
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="./Online C++ Compiler_files/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./Online C++ Compiler_files/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./Online C++ Compiler_files/ide.css">
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="./Online C++ Compiler_files/css">
+
+    <!-- jQuery 3 -->
+    <script type="text/javascript" async="" src="./Online C++ Compiler_files/analytics.js.download"></script><script type="text/javascript" async="" src="./Online C++ Compiler_files/js"></script><script src="./Online C++ Compiler_files/jquery.min.js.download"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="./Online C++ Compiler_files/bootstrap.min.js.download"></script>
+
+    <script src="./Online C++ Compiler_files/ide.js.download"></script>
+
+    <!-- Ace Editor -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/ace.js"></script> -->
+    <script src="./Online C++ Compiler_files/ace.js.download" type="text/javascript" charset="utf-8"></script>
+    <script src="./Online C++ Compiler_files/ext-language_tools.min.js.download" type="text/javascript" charset="utf-8"></script>
+    <script src="./Online C++ Compiler_files/ext-settings_menu.min.js.download" type="text/javascript" charset="utf-8"></script>
+    <script async="" src="./Online C++ Compiler_files/ext-keybinding_menu.min.js.download" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Split JS -->
+    <script type="text/javascript" src="./Online C++ Compiler_files/split.min.js.download"></script>
+
+    <link href="./Online C++ Compiler_files/toastr.min.css" rel="stylesheet">
+    <script src="./Online C++ Compiler_files/toastr.min.js.download"></script>
+
+    
+    
+    <script async="" src="./Online C++ Compiler_files/socket.io.js.download"></script>
+    <script src="./Online C++ Compiler_files/dropdown.min.js.download"></script>
+    <script src="./Online C++ Compiler_files/transition.min.js.download"></script>
+
+
+<!-- Hotjar Tracking Code for https://online-cpp.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2000197,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script><script async="" src="./Online C++ Compiler_files/hotjar-2000197.js.download"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./Online C++ Compiler_files/js(1)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-178434116-1');
+</script>
+
+<script src="./Online C++ Compiler_files/text.js.download"></script><script src="./Online C++ Compiler_files/mode-python.js.download"></script><script src="./Online C++ Compiler_files/mode-c_cpp.js.download"></script><script src="./Online C++ Compiler_files/theme-tomorrow_night_bright.js.download"></script><script src="./Online C++ Compiler_files/c_cpp.js.download"></script><script async="" src="./Online C++ Compiler_files/modules.d300ab0f8311d57bf5d6.js.download" charset="utf-8"></script><script src="./Online C++ Compiler_files/python.js.download"></script></head>
+<body class="dark">
+<div>
+<!-- <nav class="nav navbar-top primary">
+    <a  href="/"><img src="assets/images/ide_logo1.png" alt="Online IDE" class="nav_logo" width="185" height="40"></a>
+</nav> -->
+
+<nav class="nav navbar-top primary">
+    <h2 class="nav_logo">
+    <i class="fas fa-code"></i>
+        <span>Online CPP <sup>beta</sup> </span>
+</h2>
+    
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <div class="addthis_inline_share_toolbox_7qby" id="addthis_nav"></div> 
+            
+</nav>
+<div class="container" id="container">
+    <div id="header-control">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default btn-custom" id="open_file" onclick="openFile(dispFile)" data-toggle="tooltip" data-container="body" data-placement="right" title="" data-original-title="Open File from Disk" fdprocessedid="ipntaq"><i class="fas fa-folder-open"></i></button>
+            <button type="button" class="btn btn-default btn-custom" onclick="save_code_modal()" id="save_file" data-toggle="tooltip" data-container="body" data-placement="right" title="" data-original-title="Save File to Disk - F9" fdprocessedid="jhvp5"><i class="fas fa-save"></i></button>
+            <button type="button" class="btn btn-default btn-custom" onclick="share_code_modal()" data-toggle="tooltip" data-container="body" data-placement="right" title="" data-original-title="Share Code - F10" fdprocessedid="rbw4z2"><i class="fas fa-share-alt"></i></button>
+        </div>
+
+        <div class="btn-group setting-btn" role="group">
+            <button type="button" class="btn btn-default" id="toggle-theme" data-toggle="tooltip" data-container="body" data-placement="left" title="" data-original-title="Change Theme" fdprocessedid="hb51mp"><i class="fas fa-sun fa-lg"></i></button>
+            <button type="button" class="btn btn-default" onclick="about_modal()" id="info" data-toggle="tooltip" data-container="body" data-placement="left" title="" data-original-title="About Site" fdprocessedid="r3ni6"><i class="fas fa-info-circle"></i></button>
+            <button type="button" class="btn btn-default" onclick="ace_setting()" id="setting" data-toggle="tooltip" data-container="body" data-placement="left" title="" data-original-title="Settings" fdprocessedid="4nmby3"><i class="fas fa-cogs"></i></button>
+        </div>
+
+        <div class="ui fluid selection dropdown" id="lang-select" data-toggle="popover" data-trigger="manual" data-placement="left" data-content="Select the programming language" tabindex="0" data-original-title="" title="">
+            <i class="dropdown icon" tabindex="0"><div class="menu" tabindex="-1"></div></i>
+            <div class="text"><img class="ui mini image" alt="C" src="./Online C++ Compiler_files/c.svg">C</div>
+            <div class="menu transition hidden" tabindex="-1">
+                <div class="item active selected" data-value="c"><img class="ui mini image" alt="C" src="./Online C++ Compiler_files/c.svg">C</div>
+                <div class="item" data-value="cpp"><img class="ui mini image" alt="C++" src="./Online C++ Compiler_files/cpp.svg">C++</div>
+            </div>
+        </div>
+    
+    </div>
+    <div id="mi" class="split" style="height: calc(66% - 2.5px);">
+
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="" id="editor-1"><a data-toggle="tab">main.c</a></li>
+            <li id="editor-2" class=""><a data-toggle="tab" aria-expanded="false">main.cpp</a> <span> <i class="fa fa-times"></i></span></li><li id="editor-3" class="active"><a data-toggle="tab" aria-expanded="true">Untitled3</a> <span> <i class="fa fa-times"></i></span></li><li id="new_file_btn"><button type="button" class="btn btn-default btn-sm add-editor" id="create_tab" data-title="New File" fdprocessedid="0mujfe"><i class="fas fa-plus"></i></button></li>
+        </ul>
+
+        <div id="editor" class=" ace_editor ace-tomorrow-night-bright ace_dark" style="line-height: 1.5;"><div style="position: absolute;"></div><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="opacity: 0; font-size: 1px; height: 1px; width: 1px; top: 0px; left: 0px;"></textarea><div class="ace_gutter" aria-hidden="true" style="left: 0px; width: 57px;"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="height: 1e+06px; top: -3357px; left: 0px; width: 57px;"><div class="ace_gutter-cell " style="height: 21px; top: 3339px;">160<span style="display: none; height: 21px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3360px;">161<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3381px;">162<span style="display: none; height: 21px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3402px;">163<span style="display: none; height: 21px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3423px;">164<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 21px;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3444px;">165<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 21px;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3465px;">166<span style="display: none; height: 21px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3486px;">167<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 21px;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3507px;">168<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3528px;">169<span style="display: none; height: 21px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3549px;">170<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3570px;">171<span style="display: none; height: 21px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3591px;">172<span style="display: none; height: 21px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3612px;">173<span style="display: none; height: 21px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3633px;">174<span style="display: none; height: 21px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3654px;">175<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 21px;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3675px;">176<span style="display: none; height: 21px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 3696px;">177<span style="display: none; height: 21px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell ace_gutter-active-line " style="height: 21px; top: 3717px;">178<span style="display: none; height: 21px;" class="ace_fold-widget ace_start ace_open"></span></div></div></div><div class="ace_scroller" style="line-height: 21px; left: 56.0918px; right: 17px; bottom: 0px;"><div class="ace_content" style="top: -18px; left: 0px; width: 1046.91px; height: 398px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 620px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_text-layer" style="height: 1e+06px; margin: 0px 4px; top: -3339px; left: 0px;"><div class="ace_line" style="height: 21px; top: 3339px;">    <span class="ace_identifier">glutInitDisplayMode</span><span class="ace_paren ace_lparen">(</span><span class="ace_identifier">GLUT_DOUBLE</span> <span class="ace_keyword ace_operator">|</span> <span class="ace_identifier">GLUT_RGBA</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 21px; top: 3360px;">    <span class="ace_comment">// Declares window size</span></div><div class="ace_line" style="height: 21px; top: 3381px;">    <span class="ace_identifier">glutInitWindowSize</span><span class="ace_paren ace_lparen">(</span><span class="ace_constant ace_numeric">1100</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_constant ace_numeric">600</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 21px; top: 3402px;">    </div><div class="ace_line" style="height: 21px; top: 3423px;">    <span class="ace_comment">// Declares window position which is (0, 0)</span></div><div class="ace_line" style="height: 21px; top: 3444px;">    <span class="ace_comment">// means lower left corner will indicate position (0, 0)</span></div><div class="ace_line" style="height: 21px; top: 3465px;">    <span class="ace_identifier">glutInitWindowPosition</span><span class="ace_paren ace_lparen">(</span><span class="ace_constant ace_numeric">0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_constant ace_numeric">0</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 21px; top: 3486px;"></div><div class="ace_line" style="height: 21px; top: 3507px;">    <span class="ace_comment">// Name to window</span></div><div class="ace_line" style="height: 21px; top: 3528px;">    <span class="ace_identifier">glutCreateWindow</span><span class="ace_paren ace_lparen">(</span><span class="ace_string ace_start">"</span><span class="ace_string">Game</span><span class="ace_string ace_end">"</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 21px; top: 3549px;"></div><div class="ace_line" style="height: 21px; top: 3570px;">    <span class="ace_comment">// keyboard function</span></div><div class="ace_line" style="height: 21px; top: 3591px;">    <span class="ace_identifier">glutKeyboardFunc</span><span class="ace_paren ace_lparen">(</span><span class="ace_identifier">keyboard</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 21px; top: 3612px;">    <span class="ace_comment">// Call to myInit()</span></div><div class="ace_line" style="height: 21px; top: 3633px;">    <span class="ace_identifier">myInit</span><span class="ace_paren ace_lparen">(</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 21px; top: 3654px;">    <span class="ace_identifier">glutDisplayFunc</span><span class="ace_paren ace_lparen">(</span><span class="ace_identifier">myDisplay</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 21px; top: 3675px;">    <span class="ace_identifier">glutMainLoop</span><span class="ace_paren ace_lparen">(</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 21px; top: 3696px;"><span class="ace_paren ace_rparen">}</span></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="animation-duration: 1000ms; display: block; top: 378px; left: 4px; width: 8px; height: 21px;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="width: 22px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 22px; height: 3738px;">&nbsp;</div></div><div class="ace_scrollbar ace_scrollbar-h" style="display: none; height: 22px; left: 56.0918px; right: 17px;"><div class="ace_scrollbar-inner" style="height: 22px; width: 1071px;">&nbsp;</div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;">הההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההה</div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></div>
+        <div class="boxed" id="editor_footer"> Ln: 178, Col: 1</div>
+
+        <div class="control-bar">
+            <div id="control-btn"><button type="button" class="btn btn-success btn-sm" id="run-btn" onclick="run_python()" fdprocessedid="ch89fc"><i class="fa fa-play"></i> <strong>Run</strong></button></div>
+            <a tabindex="0" type="button" class="btn btn-default btn-sm" id="share-btn" onclick="share_code_modal()" data-toggle="popover" data-placement="right" data-trigger="hover" data-content="Share the code to your friends and colleagues" data-original-title="" title=""><i class="fa fa-share"></i> <strong>Share</strong></a>
+            <input class="textbox" type="text" id="input_arguments" placeholder=" Command Line Arguments" fdprocessedid="1vmfj">
+        </div>
+
+    </div>
+
+    <div class="gutter gutter-vertical" style="height: 5px;"></div><div id="d" class="split" style="height: calc(28% - 2.5px);">
+        <div class="boxed1" id="output_header">
+            <div id="hint-section"></div>
+            <div class="btn-group status" id="tool-btn">
+                <button type="button" data-toggle="tooltip" data-container="body" data-placement="right" title="" class="btn btn-default btn-sm status" onclick="copy_output()" data-original-title="Copy to Clipboard" fdprocessedid="sjva3n"><i class="fas fa-copy"></i></button>
+                <button type="button" data-toggle="tooltip" data-container="body" data-placement="right" title="" class="btn btn-default btn-sm status" onclick="download_modal()" data-original-title="Download" fdprocessedid="khu8hn"><i class="fas fa-download"></i></button>
+                <button type="button" data-toggle="tooltip" data-container="body" data-placement="right" title="" class="btn btn-default btn-sm status" onclick="clear_output()" data-original-title="Clear" fdprocessedid="f86q2l8"><i class="fas fa-eraser"></i></button>
+            </div>
+            <button type="button" data-toggle="tooltip" data-container="body" data-placement="right" title="" class="btn btn-default btn-sm status" id="term-expand" onclick="term_expand()" data-original-title="Expand/Collapse" fdprocessedid="5mrzh"><i class="fas fa-expand-alt fa-lg"></i></button>
+             
+            <div id="output-status"><span class="label label-primary"><i class="fas fa-sync-alt fa-spin"></i> Connecting to Server</span></div>
+        </div>
+
+        <div id="terminal">
+            <div id="progress-status"><div class="progress" id="progress-bar"><div class="progress-bar progress-bar-success active" role="progressbar"></div></div></div>
+            <div class="boxed2" id="output"><div class="wrapper" id="wrap"><p id="term-output">Welcome to Online IDE!! Happy Coding :)</p><p id="term-output">
+
+** Process exited - Return Code: 0 **</p></div><form id="term-form"><input id="term-input" autocomplete="off" fdprocessedid="kibtl7m8"></form></div>
+        </div>
+    </div>
+    <div id="info">
+        <h1 class="header1">Online C++ Compiler</h1>
+        <p class="para">Online C++ Compiler is a web-based tool powered by <a href="https://ace.c9.io/" target="_blank">ACE </a> code editor. This tool can be used to learn, build, run, test your python scripts. You can open the scripts from your local and continue to build using this IDE. Scripts and the results can be downloaded.</p>
+
+        <h2 class="header1">About C</h2>
+        <p class="para">C is a general purpose programming language, one of the powerful language that has inspired and influenced many other languages like Java, Python, Perl, Java, PHP, Ruby. C is widely used to build operating systemns and embedded system applications. Its origin is closely tied to the development of UNIX operating system. Compilers and Interpreter of many other programming languages are implemented using C. Its basic features and the control structures are directly and indirectly adopted by other programming languages.</p>
+        <p class="para">C was originally developed at Bell Labs by Dennis Ritchie between 1972 and 1973. It was successor to the programming language B. Around 1980, C has become most widely used programming language. C provides contructs that maps the high level program to machine instrutions more efficiently which makes it one of the fastest in terms of code execution.</p>
+
+        <p class="para">To learn more about C program check out some of the following links.</p>
+
+        <ul>
+            <li><a target="_blank" title="Visit Wikipedia&#39;s C Entry" href="https://en.wikipedia.org/wiki/C_(programming_language)">Wikipedia - C <i class="fas fa-external-link-alt"></i></a></li>
+            <li><a target="_blank" title="Visit w3schools.com&#39;s C Tutorial" href="https://www.geeksforgeeks.org/c-programming-language/" rel="nofollow">geeksforgeeks.org - C Tutorial <i class="fas fa-external-link-alt"></i></a></li>
+            <li><a target="_blank" title="Visit Programiz&#39;s C Tutorial" href="https://www.programiz.com/c-programming" rel="nofollow">programiz.com - C Tutorial <i class="fas fa-external-link-alt"></i></a></li>
+        </ul>
+
+        <h2 class="header1">Why learn C ?</h2>
+        <ul>
+            <li>It helps you to understand how a computer works</li>
+            <li>Almost all other programming languages are built from C and can interface with it</li>
+            <li>It will become easier to learn other programming languages, once you understand the C program</li>
+            <li>It is an efficient programming language</li>
+            <li>It is used in development of operating systems, system applications, Iot applications</li>
+        </ul>
+
+        <h2 class="header1">Features of this tool</h2>
+        <ul>
+            <li>Simple &amp; Clean Design, Lightweight, Easy &amp; Fast</li>
+            <li>Interactive program execution which makes the user to give program inputs at real time</li>
+            <li>Helpful for beginners to learn and practice programs</li>
+            <li>Dark &amp; Light theme options and customizable code editor with more themes</li>
+            <li>Options to Copy or Download the Output of the Program</li>
+            <li>Expandable Output Terminal</li>
+            <li>Coding sharing option helps you to save your code in cloud so that it can be accessed anytime and anywhere with internet</li>
+        </ul>
+
+        <h2 class="header1">Learn Other Programming Language?</h2>
+        <p class="para">Visit <a href="https://online-ide.com/?utm_medium=referral&amp;utm_source=online-python.com" target="_blank">online-ide.com</a> to learn and practice top programming languages - C, C++, Java, Ruby, PHP, R, GoLang</p>
+
+    </div>
+    <br><br>
+    <p id="footer">© 2023 online-cpp.com | <a href="https://www.online-cpp.com/about" target="_blank">About</a> | <a href="https://www.online-cpp.com/terms_and_conditions" target="_blank">Terms &amp; Conditions</a> | <a href="https://www.online-cpp.com/privacy_policy" target="_blank">Privacy Policy</a></p>
+</div>
+
+
+<!-- Save Result modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="downloadResult">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <h3 class="modal-title">Download Result</h3>
+            </div>
+
+            <div class="modal-body">
+              <form>
+              <div class="form-group">
+                  <label for="name">File Name:</label>
+                  <input type="text" class="form-control" id="download_file_name" value="main_output.txt">
+              </div>
+              </form>
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" onclick="download_output()" data-dismiss="modal">Download</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!-- Delete Editor Tab modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="closeEditorTab">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h3 class="modal-title" id="close_file_title">Close File</h3>
+      </div>
+
+        <div class="modal-body">
+        <p>Your changes will be lost. Are you sure you want to Close the file ?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+          <button type="submit" class="btn btn-primary" onclick="close_editor_tab()" data-dismiss="modal">Yes</button>
+        </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!-- Delete Editor Tab modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="saveEditorTab">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h3 class="modal-title" id="save_file_title">Save</h3>
+        </div>
+
+        <div class="modal-body">
+            <p>Do you want to save the file ?</p>
+            <form>
+            <div class="form-group">
+                <label for="name">File Name:</label>
+                <input type="text" class="form-control" id="code_file_name" value="main.py">
+            </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+          <button type="submit" class="btn btn-primary" onclick="download_code()" data-dismiss="modal">Yes</button>
+        </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Share modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="shareModal">
+  <div class="modal-dialog" role="document" id="share-dialog">
+    <div class="modal-content" id="share-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h3 class="modal-title" id="share_code">Share the Code</h3>
+        </div>
+
+        <div class="modal-body">
+            <!-- <p>Do you want to save the file ?</p> -->
+            <form>
+            <div class="form-group">
+                <label for="name">Expiry Period:</label>
+                <select class="form-control" id="expiry_select">
+                    <option value="1">24 hour</option>
+                    <option value="30">1 month</option>
+                    <option selected="" value="180">6 month</option>
+                    <option value="-1">Never</option>
+                </select>
+            </div>
+            </form>
+        <br>
+        <button type="submit" class="btn btn-primary" onclick="share_code()" data-dismiss="modal" id="share-btn-modal">Share</button>
+        </div>
+        
+        <!-- <div class="modal-footer">
+        </div> -->
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!-- Share modal After -->
+<div class="modal fade" tabindex="-1" role="dialog" id="shareModalAfter">
+  <div class="modal-dialog" role="document" id="share-dialog-after">
+    <div class="modal-content" id="share-content-after">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h3 class="modal-title" id="share_code">Share the Code</h3>
+        </div>
+
+        <div class="modal-body">
+            <!-- <p>Do you want to save the file ?</p> -->
+            <form>
+            <div class="form-group">
+                <label for="name">URL:</label><span id="share-copy" onclick="copy_share_url()"><i class="far fa-copy"></i></span>
+                <input type="text" class="form-control" id="share_url_box" value="http://localhost:8888/onlineide/code/HoiJqp9nQT" readonly="">
+            </div>
+            </form>
+            <div class="addthis_inline_share_toolbox_7qby" id="addthis_share_modal"></div> 
+        </div>
+        <!-- <div class="modal-footer">
+        </div> -->
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!-- About Site modal -->
+<div class="modal" tabindex="-1" role="dialog" id="aboutSiteModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h2 class="modal-title"><strong>About online-cpp.com</strong></h2>
+        </div>
+
+        <div class="modal-body abountModalBody">
+            <p>Online C++ Compiler is a web-based tool powered by <a href="https://ace.c9.io/" target="_blank">ACE </a> code editor. This tool can be used to learn, build, run, test your python scripts. You can open the scripts from your local and continue to build using this IDE. Scripts and the results can be downloaded.</p>
+
+            <h3><strong>Keyboard Shortcuts</strong></h3>
+            <ul style="font-size: larger;">
+            <li>Run Code - F8</li>
+            <li>Share Code - F9</li>
+            <li>Save Code - F10</li>
+            <li>Open Editor Command Palette - F1</li>
+            </ul>
+            
+            <h3><strong>Report a bug</strong></h3>
+            <p>If you encounter a bug or have questions or suggestions for improvements, please report it via feedback.</p>
+            
+            <h3><strong>Data policy</strong></h3>
+            <p>No data is saved in the server. The code is sent to the server for execution and will be cleared after completion. Shared Code will be saved in the server till the selected expiry period.</p>
+        </div>
+
+        <div class="modal-footer">
+          <p> Copyright © 2020 online-ide.com</p>
+          <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script type="text/javascript">
+    ace.require("ace/ext/language_tools");
+    var editor = ace.edit("editor");
+    ace.require('ace/ext/settings_menu').init(editor);
+    var editor_cnt = 1, editor_index = 1, active_editor = 1, editor_session = [];
+    var request, init_ts, open_file_name;
+    var lang = "cpp";
+    default_content = get_script(lang);
+    var prev_result = 'in'; 
+    var site_url = "https://www.online-cpp.com/"
+    var base_url = "https://www.online-cpp.com/"
+    var share_url = base_url;
+    var exe_cnt = 0;
+    var addthis_share = {
+        url: share_url,
+        // title: "THE TITLE",
+        // description: "THE DESCRIPTION",
+        // media: "THE IMAGE"
+    }
+    var csrf_token_name = 'csrf_ide_token_name'
+    var csrf_token = 'e2ab9c81dbd65f2c9914e59edb913aa1'
+
+   
+    var isMobile = window.orientation > -1;
+    
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": true,
+        "preventOpenDuplicates": true,
+        "maxOpened": 1,
+        "onclick": null,
+        "showDuration": "100",
+        "hideDuration": "1000",
+        "timeOut": "3000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        // "showMethod": "show",
+        // "hideMethod": "hide"
+    };
+    
+    var instance = Split(['#mi', '#d'], {
+        direction: 'vertical',
+        sizes: [66, 28],
+        gutterSize: 5,
+        cursor: 'row-resize',
+        minSize: [0, 180],
+        onDrag: function() {
+            editor.resize();
+        },
+    });
+
+    function term_expand() {
+        var element = document.getElementById('term-expand').innerHTML;
+        if (element === '<i class="fas fa-expand-alt fa-lg"></i>' ) {
+            instance.setSizes([0, 94]);
+            editor.resize();
+            document.getElementById('term-expand').innerHTML = '<i class="fas fa-compress-alt fa-lg"></i>'
+        } else {
+            instance.setSizes([66, 28]);
+            editor.resize();
+            document.getElementById('term-expand').innerHTML = '<i class="fas fa-expand-alt fa-lg"></i>'
+        }
+        $('#term-expand').blur();
+        $('[data-toggle="tooltip"]').tooltip('hide');
+    }
+
+    editor.setOptions({
+        enableBasicAutocompletion: true, // the editor completes the statement when you hit Ctrl + Space
+        enableLiveAutocompletion: true, // the editor completes the statement while you are typing
+        enableSnippets: true,
+        showPrintMargin: false, // hides the vertical limiting strip
+        fixedWidthGutter: true,
+        autoScrollEditorIntoView: true,
+        copyWithEmptySelection: true,
+        highlightActiveLine: false,
+    });
+
+    editor.setTheme("ace/theme/textmate");
+    // editor.setTheme("ace/theme/tomorrow_night_bright");
+    editor.container.style.lineHeight = 1.5;
+
+    editor_session[0] = ace.createEditSession(default_content, "ace/mode/python");
+    editor.setSession(editor_session[0]);
+    var active_editor_id = $('#editor-1').children('a');
+    var active_file_name = 'main.py';
+    var repl_host = get_host();
+    var command_list = [];
+    var command_index = 0;
+    var cur_cmd;
+    var hint_glow;
+
+    var y = document.getElementById('editor_footer');
+    var output = document.getElementById('output');
+    var exec_detail = document.getElementById('output-status');
+    var progress_status = document.getElementById('progress-status');
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip({
+            delay: {show: 750, hide: 50}
+        })
+    });
+
+    $(function () {
+        $('[data-toggle="popover"]').popover({
+            delay: { "show": 0, hide: 0 }
+        })
+    });
+
+    $('.popover-dismiss').popover({
+        trigger: 'hover'
+    });
+
+    editor.session.setMode("ace/mode/" + get_mode(lang));
+
+    $('#lang-select').dropdown('set selected', lang);
+    document.getElementById('editor-1').innerHTML = '<a data-toggle="tab">' + get_scriptname(lang) + '</a>';
+
+    $('#lang-select').dropdown('setting', 'onChange', function(value){
+        lang = value;
+        editor.session.setMode("ace/mode/" + get_mode(lang));
+        $("#lang-select").popover('hide');
+        document.getElementById('editor-1').innerHTML = '<a data-toggle="tab">' + get_scriptname(lang) + '</a>';
+        if (editor_session[0].getValue() === default_content) {
+            default_content = get_script(lang);
+            editor_session[0].setValue(default_content);
+            editor.focus();
+            editor.navigateFileEnd();
+        }
+    });
+
+    $(".nav-tabs").on("click", "a", function(e) {
+        // e.stopPropagation();
+        e.preventDefault();
+        detail_chk = (e.detail === undefined) ? 1 : e.detail;
+        if (!$(this).hasClass('add-editor') && !$(this).children('input').hasClass('thVal') && detail_chk == 1) {
+            active_editor = parseInt($(this).parent().attr('id').split('-')[1]);
+            active_editor_id = $(this);
+
+            editor.setSession(editor_session[active_editor - 1]);
+            active_file_name = $(this).html();
+            $(this).tab('show');
+            editor.focus();
+            update_editor_footer();
+        }
+    })
+    .on("click", "span", function() {
+        close_tab = $(this).parent();
+        close_tab.children('a').click();
+        $('#close_file_title').text('Close - ' + active_file_name);
+        if (editor.getValue() === "") {
+            close_editor_tab();
+        }
+        else {
+            $("#closeEditorTab").modal('show');
+        }
+    });
+
+    $('#rename_file').click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        active_editor_id.dblclick();
+    });
+
+    let theme = localStorage.getItem('theme') !== undefined && localStorage.getItem('theme') !== null ? localStorage.getItem('theme') : 'light'
+
+    if ( theme === 'dark') {
+        $('body').addClass('dark');
+        document.getElementById('toggle-theme').innerHTML = '<i class="fas fa-sun fa-lg"></i>';
+        editor.setTheme("ace/theme/tomorrow_night_bright");
+    } else {
+        $('body').removeClass('dark');
+        document.getElementById('toggle-theme').innerHTML = '<i class="fas fa-moon fa-lg"></i>';
+        editor.setTheme("ace/theme/textmate");
+    }
+
+
+    $('#toggle-theme').click(function(e) {
+        document.body.classList.toggle('dark');
+        if ($('body').hasClass("dark")) {
+            editor.setTheme("ace/theme/tomorrow_night_bright");
+            document.getElementById('toggle-theme').innerHTML = '<i class="fas fa-sun fa-lg"></i>';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            editor.setTheme("ace/theme/textmate");
+            document.getElementById('toggle-theme').innerHTML = '<i class="fas fa-moon fa-lg"></i>';
+            localStorage.setItem('theme', 'light');
+        }
+        $('#toggle-theme').blur();
+        $('[data-toggle="tooltip"]').tooltip('hide');
+    });
+
+    $('.add-editor').click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        editor_cnt += 1;
+        editor_index += 1;
+        var id = editor_cnt;
+        
+        active_editor = id;
+        editor_session[active_editor - 1] = ace.createEditSession('', "ace/mode/" + get_mode(lang));
+        editor.setSession(editor_session[active_editor - 1]);
+
+        $(this).closest('li').before('<li id="editor-' + id + '"><a data-toggle="tab">Untitled' + id + '</a> <span> <i class="fa fa-times"></i></span></li>');
+        // $('.nav-tabs li:nth-child(' + id + ') a').click();
+
+        active_editor_id = $(".nav-tabs li").children('a').last();
+        active_editor_id.tab('show');
+        active_editor_id.dblclick();
+        update_editor_footer();
+
+        editor.selection.on('changeCursor', function(e) {
+            update_editor_footer();
+        });
+
+        editor.selection.on('changeSelection', function(e) {
+            update_editor_footer();
+        });
+    });
+
+    $(document).on('dblclick', '.nav-tabs > li > a', function (event) {
+        if($(event.target).attr('class')!="thVal")
+            {
+                event.stopPropagation();
+                event.preventDefault();
+                var currentEle = $(this);
+                var value = $(this).html();
+                if (value.search('<input') === -1) updateVal(currentEle, value);
+        }
+    });
+
+    editor.focus();
+    editor.navigateFileEnd();
+
+    update_editor_footer();
+
+    editor.selection.on('changeCursor', function(e) {
+        update_editor_footer();
+    });
+
+    editor.selection.on('changeSelection', function(e) {
+        update_editor_footer();
+    });
+
+    $('.status button').attr('disabled','disabled');
+    $('#stop-btn').attr('disabled', 'disabled');
+
+    socket_options = { 
+        transports: ["websocket"], 
+        'timeout': 3000, 
+        'connect timeout': 3000,
+        'reconnection': true,
+        'reconnectionDelay': 1000,
+        'reconnectionDelayMax' : 5000,
+        'reconnectionAttempts': 5
+    };
+
+    // ace.config.loadModule("ace/ext/keybinding_menu", function(module) {
+    //     module.init(editor);
+    // });
+
+    $(document).keyup(function (e) {
+        IsCtrl = false;
+        IsShift = false;
+    }).keydown(function (e) {
+
+        // first capture Ctrl 
+        if (e.which == 17) { IsCtrl = true; }
+
+        // now capture Shift 
+        if (e.which == 16) { IsShift = true; }
+
+        switch (e.which) {
+
+            // now capture S and if Ctrl is pressed                                                                                                                                                                                          
+            // case 75: 
+            //     if (IsCtrl) { alert("Ctrl K pressed"); editor.showKeyboardShortcuts();} 
+            //     if (IsShift) { alert("Shift R pressed");  } 
+            //     e.preventDefault(); 
+            //     break;
+
+            // capture F8
+            case 119: run_python(); e.preventDefault(); break;
+            //F9
+            case 120: share_code_modal(); e.preventDefault(); break;
+            //F10
+            case 121: save_code_modal(); e.preventDefault(); break;
+
+            // capture ESC
+            // case 27: stop_python(); e.preventDefault(); break;
+        }
+    });
+
+    $('#output').on('click', function() {
+        $('#term-input').focus();
+    });
+    
+    window.onbeforeunload=goodbye;
+
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="./Online C++ Compiler_files/addthis_widget.js.download"></script> 
+</div><iframe id="_hjSafeContext_38380993" title="_hjSafeContext" tabindex="-1" aria-hidden="true" src="./Online C++ Compiler_files/saved_resource.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe></body></html>

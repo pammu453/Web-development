@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>I am para 1</p>
+        <p>I am para 2</p>
+        <p>I am para 3</p>
+    </div>
+    <script>
+        console.log(document.body.firstChild);
+        console.log(document.body.lastChild);
+        console.log(document.body.childNodes); // it returns nodelist
+
+        let arr=Array.from(document.body.childNodes);
+        console.log(arr);  // this is array of elements
+
+
+        console.log(document.body.hasChildNodes());  //it returns true if childes are there else returns false
+
+        console.log(document.body.childNodes[3]);
+    </script>
+</body>
+</html>

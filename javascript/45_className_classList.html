@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+     .red{
+        background-color: red;
+     }
+
+     .width{
+        width: 100px;
+        height: 100px;
+     }
+
+     .cyan{
+        background-color: cyan;
+     }
+
+
+     .font{
+        color:blue;
+     }
+    </style>
+</head>
+<body>
+    <div id="box" class="container">
+        this is div
+    </div>
+
+    <script>
+        let a=document.getElementById("box");
+
+        // ..className
+        // console.log(a.className);  // get the class name
+        // a.className="red width"  //you can set one or more class at a time
+
+
+        //classList
+        // console.log(a.classList);
+        
+        // a.classList.add("font");
+        // a.classList.remove("width");
+        // a.classList.replace("red","cyan");
+
+        setInterval(()=>{
+            a.classList.toggle("cyan");
+        },300)
+
+    </script>
+</body>
+</html>

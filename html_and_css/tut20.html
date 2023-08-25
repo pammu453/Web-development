@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>BOX model</title>
+
+   <style>
+      
+      *{
+         box-sizing: border-box;
+         margin: 0px;
+         padding:0px ;
+      }
+
+      body{
+         background-image: url("Screenshot_20211112_072608.jpg");
+         background-color: blue;
+         
+         background-repeat: no-repeat;
+         background-position: center;
+         
+      }
+
+      .container{
+         background-color: rgb(88, 82, 73);
+         border: 19px solid red;
+
+         /* padding: 100px;  which makes all side padding */
+
+         /* or */
+
+         /* padding : 100px 100px 100px ;   padding=top right bottom left; */
+
+         /* or */
+
+         /* padding-top: 33px;
+         padding-bottom: 33px;
+         padding-left: 33px;
+         padding-right: 33px; */
+
+         /* or */
+
+         padding: 19px 19px;           /* padding: y(top/bottom) x(left/right); */
+
+
+         /* all abouve stuff is also same for margin, write margin instead padding */
+         margin: 106px;
+
+         border-radius: 40px;
+
+         width: 230px;
+         height: 300px;
+
+         box-sizing: border-box;
+         
+         
+      }
+   </style>
+   
+</head>
+<body>
+   <div class="container">
+      <h3>This is my heading</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sunt doloribus commodi, ipsa animi quaerat neque minima tempora quis, quos harum sint placeat voluptate velit nisi?</p>
+   </div>
+   
+   <div class="container">
+      <h3>This is my heading</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sunt doloribus commodi, ipsa animi quaerat neque minima tempora quis, quos harum sint placeat voluptate velit nisi?</p>
+   </div>
+   
+   <div class="container">
+      <h3>This is my heading</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sunt doloribus commodi, ipsa animi quaerat neque minima tempora quis, quos harum sint placeat voluptate velit nisi?</p>
+   </div>
+   
+</body>
+</html>

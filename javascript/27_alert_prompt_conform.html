@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Hello world</h1>
+    <script>
+        alert("Hi how are you doing?");
+
+        let num=prompt("Enter the number :","4000"); // 4000 is default value you can choose any number.
+        num=Number.parseInt(num);
+
+        let write=confirm("Do you want to write to document :");
+        if(write==true){
+            document.write(num);
+        }
+        else{
+            document.write("Please allow me to write");
+        }
+
+
+    </script>
+</body>
+</html>

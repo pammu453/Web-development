@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        //localstorage 5mb
+        //local storage is web storage object these are not sent sent to server on request
+        //data will reside even when refresh page,close and open the page again
+        //both key and value must be string 
+        // wecan also use JSON methods to store the data inside the local storage
+        //1) JSON.stringify(object)  converts object to json
+        //1) JSON.parse(string)  converts obj to object
+
+        //methods
+
+        localStorage.setItem("name","Pramod");
+        localStorage.setItem("age","23");
+        console.log(localStorage.getItem("name"));
+        // sessionStorage.removeItem("age");
+        // sessionStorage.clear()  // clears everting in the session storage
+        console.log(localStorage.key(1));
+        console.log(sessionStorage.length);
+
+        //another way to set item
+        localStorage.one=1;
+
+        delete localStorage.one;
+    </script>
+
+</body>
+</html>

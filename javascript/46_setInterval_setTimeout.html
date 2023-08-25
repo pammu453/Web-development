@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout and setInterval</title>
+
+    <style>
+        .cyan{
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ipsa corrupti necessitatibus autem ex. Officia temporibus, dignissimos aliquam vero fuga placeat culpa quibusdam! Suscipit eligendi, et pariatur perspiciatis perferendis veritatis deserunt sunt! Consequatur, modi repudiandae. Temporibus molestiae dignissimos architecto tempora voluptatum omnis quibusdam iusto ad, recusandae ex ullam.
+    </div>
+
+    <script>
+
+
+        //both of these return timer id
+
+        // let a=document.getElementsByClassName("container")[0];
+        // const back=(x,y)=>{
+        //     a.className="cyan";
+        //     console.log(x+y);
+        // }
+        // let timeid=setTimeout(back,5000,10,10);
+        // // clearTimeout(timeid);
+
+
+        let a=document.getElementsByClassName("container")[0];
+        const back=(x,y)=>{
+            a.className="cyan";
+            console.log(x+y);
+        }
+        let timeid=setInterval(back,5000,10,10);
+        clearInterval(timeid);
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div id="myid" class="first">first</div>
+      <div class="first">second</div>
+      <div class="first">third</div>
+      <div>fourth</div>
+      <div class="first">fifth</div>
+      <a href="">Hii</a>
+      <p>this is para 1</p>
+      <p>this is para 2</p>
+      <p name="myname">this is para 2</p>
+      <p name="myname">this is para 3</p>
+      <p name="myname">this is para 4</p>
+
+      <button onclick="myfunc()"> this is button</button>
+    </div>
+
+    <script>
+      // 1)
+      // let a=document.getElementById("myid");
+      // a.style.color="red";
+      // a.style.background="cyan";
+
+
+      // 2)
+      // document.getElementsByClassName("first")[0].style.color="red";
+      // document.getElementsByClassName("first")[1].style.color="cyan";
+      // document.getElementsByClassName("first")[2].style.color="blue";
+
+      //  let x=document.getElementsByClassName("first");
+      //  for(let i=0;i<x.length;i++){
+      //   x[i].style.color="red";
+      //  }
+
+      //  3)
+      // document.getElementsByName("myname")[0].style.color="red";
+      // document.getElementsByName("myname")[1].style.color="red";
+      // document.getElementsByName("myname")[2].style.color="red";
+
+      // function myfunc(){
+      //   let x=document.getElementsByName("myname");
+      //   console.log(x);
+      //   for(let i=0;i<x.length;i++){
+      //   x[i].style.color="red";
+      //   }
+      // }
+
+      //  4)
+      // document.getElementsByTagName("p")[0].style.color="red";
+      // document.getElementsByTagName("p")[1].style.color="red";
+
+      //  5)
+
+      // let a=document.querySelector(".first"); // inside this css selecoter
+      // console.log(a);
+
+
+      // let b=document.querySelectorAll(".first");
+      // console.log(b);
+    
+    </script>
+  </body>
+</html>

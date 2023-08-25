@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <style>
+
+        .container{
+            border:2px solid black;
+            height: 400px;
+            width: 400px;
+        }
+        .box-1{
+            background-color: aqua;
+        }
+        .box-2 {
+         background-color: red;
+      
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- float-(sm|md|lg|xl|xxl)-(start|end|none) -->
+    <!-- and clearfix is used to have the divs inside the container -->
+
+    <!-- <div class="container clearfix">
+        <div class="box-1 float-lg-start float-xl-end float-xl-none">
+            <h1>Div-1</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </div>
+        <div class="box-2 float-lg-end float-xl-start">
+            <h1>Div-2</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </div>
+    </div> -->
+
+
+    <!-- width classess(w-*|auto)(where * is 25|50|50|75|100)  it takes in % of the parent
+       height classess(h-*|auto)(where * is 25|50|50|75|100)  it takes in % of the parent -->
+    <div class="container">
+        <div class="box-1 h-100">
+            <h1>Div-1</h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </div>
+    </div>
+
+    <!-- important -->
+    <!-- vh-100(view height) height is equal to the view page size -->
+    <!-- vw-100(view width)  width is equal to the view page size   -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrapbundleminjs"integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+

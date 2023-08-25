@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            box-sizing: border-box;
+
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(7, 214, 197);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url("51image/background.jpg");
+        }
+
+        .time {
+            background-color: #044e65;
+            width:400px;
+            height: 200px;
+            border-radius: 40px;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+            font-size: 50px;
+            text-align: center;
+            color:antiquewhite;
+            padding: 30px;
+            
+            border-style:solid ;
+            border-width: 10px;
+            border-color: rgb(0, 0, 0);
+        
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div style="font-family: 'Orbitron', sans-serif;">
+        <div class="container">
+            <div class="time">
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function todate(){
+            let d=new Date();
+            let j=d.toLocaleDateString();
+            let k=d.getHours();
+            let l=d.getMinutes();
+            let m=d.getSeconds();
+            let a=document.getElementsByClassName("time")[0];
+            a.innerHTML=`${j}<hr>${k}:${l}:${m}`;
+            console.log(a.innerHTML);
+        }
+
+
+        setInterval(todate,1000);
+    </script>
+</html>

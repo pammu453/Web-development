@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            display: flex;
+        }
+        li{
+            margin: 10px;
+        }
+        div{
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>about</li>
+                <li>ContactUs</li>
+                <li>More</li>
+            </ul>
+        </nav>
+    </div>
+    
+
+
+    <table>
+        <tr>
+            <th>Head</th>
+            <th>Hi</th>
+            <th>Hello</th>
+        </tr>
+        <tr>
+            <th>Head</th>
+            <th>Hi</th>
+            <th>Hello</th>
+        </tr>
+   
+    </table>
+    <script>
+        // 1)
+        // document.getElementsByTagName("li")[0].style.color="red";
+
+        //2) No
+
+        // 3)
+
+        // document.getElementsByTagName("li")[0].style.color="green";
+        // document.getElementsByTagName("li")[3].style.color="green";
+
+        // document.body.firstElementChild.firstElementChild.firstElementChild.firstElementChild.style.color="red"
+        // document.body.firstElementChild.firstElementChild.firstElementChild.lastElementChild.style.color="red"
+
+
+        // 4)
+        // let a=document.getElementsByTagName("li");
+
+        // for(let i=0;i<a.length;i++){
+        //     a[i].style.background="cyan";
+        // }
+
+        // 5) none of these
+    </script>
+</body>
+</html>

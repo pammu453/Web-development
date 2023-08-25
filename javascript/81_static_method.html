@@ -1,0 +1,31 @@
+<!-- 
+The “static” is a keyword that is used for a class, method, or a property. Static method is a method that is directly a member of a class rather than a part of instance of class.
+Using a static method, we can invoke a method directly from a class, instead of creating an instance of a class. A class can have any number of static methods and static variables -->
+
+<!-- 1) -->
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Static methods in JavaScript classes</title>
+</head>
+<body style="text-align: center;">
+   <p>Static methods in JavaScript classes</p>
+
+   <p id="static"></p>
+   <script>
+      class Sample {
+         static show1() {
+            return "static method is invoked";
+         }
+         show2() {
+            return "non-static method is invoked";
+         }
+      }
+      var obj = new Sample();
+      document.getElementById('static').innerHTML = Sample.show1()+"<br>"+obj.show2();
+   </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML insertion</title>
+
+    <style>
+        .container{
+            background-color: aqua;
+            margin: 10px;
+            padding: 10px;
+            width: 100px;
+        }
+        .container div{
+            background-color: red;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div> this is div 1</div>
+        <div> this is div 2</div>
+        <div> this is div 3</div>
+        <div> this is div 4</div>
+    </div>
+    
+    <script>
+        // let a=document.getElementsByClassName("container")[0];
+        // a.innerHTML=a.innerHTML + "<div> this is div 5</div>";
+
+        let div=document.getElementsByClassName("container")[0];
+        let new_div=document.createElement("div");
+        new_div.innerText="Hello world";
+        // div.append(new_div);
+        // div.prepend(new_div);
+        // div.before(new_div);
+        // div.after(new_div);
+        // div.replaceWith(new_div);
+
+    </script>
+</body>
+</html>

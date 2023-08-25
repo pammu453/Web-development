@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo list</title>
+    <style>
+        label,button{
+            display: block;
+            margin: 3px;
+        }
+
+    </style>
+</head>
+<body>
+    <label for="text">Key:</label>
+    <input type="text" name="key" id="key" placeholder="Enter the key">
+    <label for="text">Value:</label>
+    <input type="text" name="value" id="value" placeholder="Enter the value">
+    <button type="submit" id="button_sub">Submitee</button>
+    <hr>
+    <label for="text">Do you want to delete item?</label>
+
+    <input type="text" id="del_ele" placeholder="Enter the key to delete">
+    <button type="submit" id="button_del">Delete</button>
+
+    <script>
+
+        let a=document.getElementById("button_sub");
+        a.addEventListener("click",()=>{
+            let b=document.getElementById("key");
+            console.log(b.value);
+            let c=document.getElementById("value");
+            console.log(c.value);
+            localStorage.setItem(b.value,c.value);           
+        });
+        document.getElementById("button_del").addEventListener("click",()=>{
+            let x=document.getElementById("del_ele");
+            console.log(x.value);
+            localStorage.removeItem(x.value);
+        });
+    </script>
+</body>
+</html>

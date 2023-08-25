@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="musicplayer">
+        <nav>
+          <div class="circle"><i class="fa fa-angle-double-left"></i></div>
+          <div class="circle"><i class="fa fa-align-center"></i></div>
+        </nav>
+        <img src="media/4813246.jpg" alt="Artist pic"/>
+        <h1>Thalapathy vijay</h1>
+        <p>Thee thalapathy song..</p>
+        <audio id="song">
+          <source
+            src="media/y2mate.com - Thee Thalapathy  Thalapathy Vijay  STR  Vamshi Paidipally  Thaman (1).mp3"
+            type="audio/mpeg"/>
+          </audio>
+        <input type="range" value="0" id="progress" />
+        <div class="controls">
+          <div><i class="fa fa-step-backward"></i></div>
+          <div><i onclick="playpause()" class="fa fa-play" id="ctrlIcon"></i></div>
+          <div><i class="fa fa-step-forward"></i></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

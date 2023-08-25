@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body><div><div class="first">first</div><div class="second">second</div></div>
+
+<script>
+    console.log(document.body.firstChild);
+
+    let a=document.body.firstChild;
+    console.log(a.parentElement);
+    console.log(a.parentNode);
+
+    console.log(document.documentElement.parentElement); //null because it returns only elemnt if the parent is element else returns null
+    console.log(document.documentElement.parentNode); // it returns anything either commnt node,text node document
+</script>
+</body>
+</html>

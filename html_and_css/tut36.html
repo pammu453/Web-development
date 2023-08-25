@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframes and Animations</title>
+</head>
+<style>
+    .container {
+        background-color: aquamarine;
+    }
+
+    .box {
+        background-color: rgb(1, 1, 0);
+        width: 250px;
+        height: 250px;
+        position: relative;
+
+        /* animation-name: pramod1; */
+        animation-name: pramod2;
+
+        animation-duration: 2s;
+
+        animation-iteration-count: 5;
+        /* animation-iteration-count: infinite; */
+
+        /* animation-fill-mode: backwards; */
+        /* animation-fill-mode: forwards; */
+
+
+        /* animation-timing-function: ease; */
+        /* animation-timing-function: ease-in-out; */
+        /* animation-timing-function: ease-out; */
+        /* animation-timing-function: step-end; */
+
+
+        /* animation-delay: 3s; */
+
+        /* animation-direction: reverse; */
+
+
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+        animation: pramod2 3 ease-in 1 6 reverse forwards;
+
+    }
+
+    @keyframes pramod2 {
+        0% {
+            top: 0px;
+            left: 0px;
+        }
+
+        20% {
+            top: 0px;
+            left: 1000px;
+        }
+
+        40% {
+            top: 250px;
+            left: 0px;
+        }
+
+        60% {
+            top: 250px;
+            left: 1000px;
+        }
+
+        80% {
+            top: 250px;
+            left: 1000px;
+        }
+
+        100% {
+            top: 0px;
+            left: 1500px;
+        }
+    }
+
+    @keyframes pramod1 {
+        from {
+            width: 200px;
+        }
+
+        to {
+            width: 1200px;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            This is box
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Media Queries</title>
+   <style>
+      .box{
+         font-size: 50px;
+         background-color: aquamarine;
+         counter-reset: black;
+         text-align: center;
+         display: none;
+      }
+      /* media only sceeen means supports sceeen only nothing other than this */
+      @media  only screen and (max-width:300px){
+         #box1{
+            display: block;
+            background-color: blue;
+         
+         }
+      }
+      @media only screen and(min-width:300px) and (max-width:600px){
+         #box2{
+            display: block;
+            background-color: rgb(13, 255, 0);
+         
+         }
+      }
+      @media only screen and(min-width:600px) and (max-width:900px){
+         #box3{
+            display: block;
+            background-color: rgb(255, 0, 0);
+         
+         }
+      }
+      @media only screen and(min-width:900px){
+         #box4{
+            display: block;
+            background-color: rgb(0, 200, 255);
+         }
+
+      }
+   </style>
+</head>
+<body>
+   <div class="box" id="box1">Iphone</div>
+   <div class="box" id="box2">Tablet</div>
+   <div class="box" id="box3">computer</div>
+   <div class="box" id="box4">wideScreen computer</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute and nth chlid Pseudo select0es</title>
+    <style>
+        .container{
+            display:block;
+            width: 300px;
+            margin: auto;
+
+        }
+
+        input{
+            display: block;
+        }
+
+        
+
+
+        /* aplicable to input which having type text */
+        input[type="text"]{
+            border: 4px solid cadetblue;
+            margin: 2px;
+            background-color: darkorange;
+            color: black;
+
+        }
+
+        /* aplicable to input which having type password */
+        input[type="password"]{
+            border: 4px solid rgb(181, 53, 30);
+            margin: 2px;
+            background-color: darkorange;
+            color: black;
+
+        }
+
+        /* aplicable to a which we setted the target */
+        a[target]{
+            color:rgb(229, 255, 0)
+        }
+
+        /* aplicable to a which we setted the target */
+        a[target="_self"]{
+            color: darksalmon;
+        }
+        
+        /* css is applicabe to only 3rd list */
+        /* li:nth-child(3){
+            color: red;
+        } */
+
+        /* applies the css to even numbered list */
+        li:nth-child(2n){
+            color: red;
+        }
+       
+        /* applies the css to odd numbered list */
+        /* li:nth-child(2n+1){
+            color: red;
+        } */
+        
+        
+
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3><a href="http://google.com" target="_blank">Go to google</a></h3>
+        <h3><a href="http://facebook.com" target="_self">Go to facebook</a></h3>
+        <h3><a href="http://my.com">Go to my</a></h3>
+        <form action="form.php">
+            <input type="text" placeholder="Enter your name...">
+            <input type="password" placeholder="Enter your passcode...">
+            <input type="submit" value="Submit">
+        </form>
+        <ul>
+            <li class="box" id="box1">Box1</li>
+            <li class="box" id="box2">Box2</li>
+            <li class="box" id="box3">Box3</li>
+            <li class="box" id="box4">Box4</li>
+            <li class="box" id="box5">Box5</li>
+            <li class="box" id="box6">Box6</li>
+            <li class="box" id="box7">Box7</li>
+            <li class="box" id="box8">Box8</li>
+            <li class="box" id="box9">Box9</li>
+            <li class="box" id="box10">Box10</li>
+            
+        </ul>
+    </div>
+</body>
+
+</html>

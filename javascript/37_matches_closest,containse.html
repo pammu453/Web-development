@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="id1" class="box">box-1 </div>
+    <div id="id2" class="box">box-2</div>
+    <div id="id3" class="box">box-3</div>
+
+
+    <a id="id7" href="">this is anchor<div id="id8">this is div <p id="id9">this is para</p></div></a>
+
+    <div id="outer">
+        <div id="inner">
+            <div id="inners">this is inner</div>
+        </div>
+    </div>
+
+    <script>
+        let id1=document.getElementById("id1");
+        console.log(id1.matches(".box"));  // to check if the given element matches with the css selector
+        console.log(id1.matches(".box11"));  // to check if the given element matches with the css selector
+
+
+        let a=document.getElementById("id9");  //checks for an nearer ancester css selector
+        console.log(a.closest("#id9"));
+        console.log(a.closest("#id8"));
+        console.log(a.closest("#id7"));
+
+
+        let x=document.getElementById("outer");
+        let y=document.getElementById("inner");
+        let z=document.getElementById("inners");
+        let m=document.getElementById("mmm");
+        console.log(x.contains(x));
+        console.log(x.contains(y));
+        console.log(x.contains(m));
+
+    </script>
+   
+    
+</body>
+</html>

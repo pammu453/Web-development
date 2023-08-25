@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before and After pseudo selecter</title>
+    <style>
+         body{
+            color: beige;
+            background-color: black;
+            
+            
+        } 
+        
+        header::before{
+            content: "";
+            background:url("Screenshot_20220104_193832\ \(1\).jpg");
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+
+            background-size: contain;   /*it will make image to full screen
+            /* transform: rotate(360deg); */
+            background-repeat: no-repeat;
+
+
+
+            opacity: 1;
+        }
+
+
+
+        header{
+            display: flex;
+            flex-direction: column;
+        }
+
+        li{
+            list-style: none;
+            padding: 13px;
+            margin: 23px;
+            font-size: 20px;
+            
+        }
+
+        .navigation{
+            display: flex;
+            
+        }
+        
+        section{
+            
+            text-align: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* section::before{
+            content: "this is a before content"
+
+        } */
+
+        /* section::after{
+            content: "this is a after content"
+
+        } */
+
+        h1{
+            font-size: 60px;
+            font-style: italic;
+        }
+
+        p{
+            text-align: center;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="navigation">
+                <li class="item">Home</li>
+                <li class="item">About</li>
+                <li class="item">Servises</li>
+                <li class="item">More</li>
+            </ul>
+        </nav>
+        <section>
+            <h1>Welcome to Flower world</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sequi accusantium consequuntur quia hic,quidolorum recusandae inventore modi sint expedita. Placeat, quiaoptio! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit laboriosam incidunt voluptatibus dicta? Architecto modi, exercitationem tempore quaerat quia assumenda nam eius cupiditate natus ab illum voluptates laudantium ex, ullam minus odio in. Voluptate eum laudantium nisi debitis ducimus deleniti accusamus nihil minus velit. Nobis.                     
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sequi accusantium consequuntur quia hic,quidolorum recusandae inventore modi sint expedita. Placeat, quiaoptio! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit laboriosam incidunt voluptatibus dicta? Architecto modi, exercitationem tempore quaerat quia assumenda nam eius cupiditate natus ab illum voluptates laudantium ex, ullam minus odio in. Voluptate eum laudantium nisi debitis ducimus deleniti accusamus nihil minus velit. Nobis.                     
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sequi accusantium consequuntur quia hic,quidolorum recusandae inventore modi sint expedita. Placeat, quiaoptio! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit laboriosam incidunt voluptatibus dicta? Architecto modi, exercitationem tempore quaerat quia assumenda nam eius cupiditate natus ab illum voluptates laudantium ex, ullam minus odio in. Voluptate eum laudantium nisi debitis ducimus deleniti accusamus nihil minus velit. Nobis.                     
+            </p>
+
+        </section>
+
+        <hr>
+    </header>
+</body>
+
+</html>

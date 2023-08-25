@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="myclass" id="myId" data-my="Hello" data-you="Hii">
+        the world is good
+    </div>
+    <div>
+        Hiii
+    </div>
+
+    <script>
+   
+          let a=document.getElementsByTagName("div")[0];
+
+          console.log(a.getAttribute("class"));
+          console.log(a.getAttribute("id"));
+
+          console.log(a.hasAttribute("id"));
+          console.log(a.hasAttribute("class"));
+          console.log(a.hasAttribute("xxx"));
+
+          console.log(a.attributes); // to get all attributes of element
+
+          let b=document.getElementsByTagName("div")[1];
+          b.setAttribute("class","box1");
+          b.setAttribute("id","box2");
+
+          b.removeAttribute("class") 
+
+          //user difined attributes data-my , data-you
+
+          console.log(a.dataset);
+          console.log(a.dataset.my);
+          console.log(a.dataset.you);
+
+          
+
+    </script>
+</body>
+</html>

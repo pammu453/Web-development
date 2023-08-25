@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="button" id="demo" value="click me">
+    <script>
+        // syncronous action
+        //   let a = prompt("your name?");
+        //   alert(a);
+
+        //  asyncronous action
+        //   console.log("start");
+        //   setTimeout(()=>{
+        //     console.log("Hello");
+        //   },3000);
+        //   console.log("stop");
+
+
+
+        // call back function are asyncronous function,
+        //         "I will call back later!"
+
+        // A callback is a function passed as an argument to another function This technique allows a function to call another function ,A callback function can run after another function has finished
+
+        
+        // 1) example
+        //   setTimeout(()=>{
+        //     console.log("Hello");
+        //   },3000);
+
+        //   2)exmple
+
+        // document.getElementsByTagName("input")[0].addEventListener("click",()=>{
+        //     console.log("You clicked me");
+        // })
+
+        // 3)example
+
+        // function greet(name) {
+        //     console.log("Hello pmsd" + name);
+        // }
+
+        // function getName(callback) {
+        //     let name = prompt("Enter youe name :");
+        //     callback(name);
+        // }
+        // getName(greet);
+
+
+        // 4)
+        function myDisplayer(something) {
+            console.log(something);
+        }
+
+        function myCalculator(num1, num2, myCallback) {
+            let sum = num1 + num2;
+            myCallback(sum);
+        }
+
+        myCalculator(5, 5, myDisplayer);
+
+
+
+    </script>
+</body>
+
+</html>

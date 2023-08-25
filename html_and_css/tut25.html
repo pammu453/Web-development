@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Position absolute,relative,fixed and sticky in CSS</title>
+
+   <!-- position:static(default) ,absolute ,relative,fixed,sticky -->
+
+   <style>
+      .container {
+         border: 2px solid red;
+         background-color: chartreuse;
+         height: 3444px;
+      }
+
+
+      .box {
+         border: 2px solid rebeccapurple;
+         width: 150px;
+         height: 150px;
+         display: inline-block;
+
+      }
+
+      #box3 {
+
+         position: absolute;   /* it keeps the fild empty */
+         /* position: relative;    */
+
+         /* position: absolute;    is fills the fild by other boxes */
+         /* position: absolute; */
+
+
+         position:fixed;   /* it always stays in the same place even if we scroll */
+         /* position:fixed; */
+
+         position:sticky;
+
+         top: 100px;
+         left: 400px;
+         /* right: 145px; */
+         /* bottom: 100px; */
+      }
+   </style>
+</head>
+
+<body>
+   <div class="container">
+      <div id="box1" class="box">1</div>
+      <div id="box2" class="box">2</div>
+      <div id="box3" class="box">3</div>
+      <div id="box4" class="box">4</div>
+   </div>
+</body>
+
+</html>

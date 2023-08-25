@@ -1,0 +1,2618 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://onecompiler.com/c -->
+<html lang="en" style="" class=" "><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="autocompletion.css">.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {    background-color: #CAD6FA;    z-index: 1;}.ace_dark.ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line {    background-color: #3a674e;}.ace_editor.ace_autocomplete .ace_line-hover {    border: 1px solid #abbffe;    margin-top: -1px;    background: rgba(233,233,253,0.4);    position: absolute;    z-index: 2;}.ace_dark.ace_editor.ace_autocomplete .ace_line-hover {    border: 1px solid rgba(109, 150, 13, 0.8);    background: rgba(58, 103, 78, 0.62);}.ace_completion-meta {    opacity: 0.5;    margin: 0.9em;}.ace_completion-message {    color: blue;}.ace_editor.ace_autocomplete .ace_completion-highlight{    color: #2d69c7;}.ace_dark.ace_editor.ace_autocomplete .ace_completion-highlight{    color: #93ca12;}.ace_editor.ace_autocomplete {    width: 300px;    z-index: 200000;    border: 1px lightgray solid;    position: fixed;    box-shadow: 2px 3px 5px rgba(0,0,0,.2);    line-height: 1.4;    background: #fefefe;    color: #111;}.ace_dark.ace_editor.ace_autocomplete {    border: 1px #484747 solid;    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.51);    line-height: 1.4;    background: #25282c;    color: #c1c1c1;}
+/*# sourceURL=ace/css/autocompletion.css */</style><style>.ace_snippet-marker {    -moz-box-sizing: border-box;    box-sizing: border-box;    background: rgba(194, 193, 208, 0.09);    border: 1px dotted rgba(211, 208, 235, 0.62);    position: absolute;}</style><style id="ace-xcode">.ace-xcode .ace_gutter {background: #e8e8e8;color: #333}.ace-xcode .ace_print-margin {width: 1px;background: #e8e8e8}.ace-xcode {background-color: #FFFFFF;color: #000000}.ace-xcode .ace_cursor {color: #000000}.ace-xcode .ace_marker-layer .ace_selection {background: #B5D5FF}.ace-xcode.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #FFFFFF;}.ace-xcode .ace_marker-layer .ace_step {background: rgb(198, 219, 174)}.ace-xcode .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #BFBFBF}.ace-xcode .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.071)}.ace-xcode .ace_gutter-active-line {background-color: rgba(0, 0, 0, 0.071)}.ace-xcode .ace_marker-layer .ace_selected-word {border: 1px solid #B5D5FF}.ace-xcode .ace_constant.ace_language,.ace-xcode .ace_keyword,.ace-xcode .ace_meta,.ace-xcode .ace_variable.ace_language {color: #C800A4}.ace-xcode .ace_invisible {color: #BFBFBF}.ace-xcode .ace_constant.ace_character,.ace-xcode .ace_constant.ace_other {color: #275A5E}.ace-xcode .ace_constant.ace_numeric {color: #3A00DC}.ace-xcode .ace_entity.ace_other.ace_attribute-name,.ace-xcode .ace_support.ace_constant,.ace-xcode .ace_support.ace_function {color: #450084}.ace-xcode .ace_fold {background-color: #C800A4;border-color: #000000}.ace-xcode .ace_entity.ace_name.ace_tag,.ace-xcode .ace_support.ace_class,.ace-xcode .ace_support.ace_type {color: #790EAD}.ace-xcode .ace_storage {color: #C900A4}.ace-xcode .ace_string {color: #DF0002}.ace-xcode .ace_comment {color: #008E00}.ace-xcode .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==) right repeat-y}
+/*# sourceURL=ace/css/ace-xcode */</style><style id="ace-dracula">.ace-dracula .ace_gutter {background: #282a36;color: rgb(144,145,148)}.ace-dracula .ace_print-margin {width: 1px;background: #44475a}.ace-dracula {background-color: #282a36;color: #f8f8f2}.ace-dracula .ace_cursor {color: #f8f8f0}.ace-dracula .ace_marker-layer .ace_selection {background: #44475a}.ace-dracula.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #282a36;border-radius: 2px}.ace-dracula .ace_marker-layer .ace_step {background: rgb(198, 219, 174)}.ace-dracula .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid #a29709}.ace-dracula .ace_marker-layer .ace_active-line {background: #44475a}.ace-dracula .ace_gutter-active-line {background-color: #44475a}.ace-dracula .ace_marker-layer .ace_selected-word {box-shadow: 0px 0px 0px 1px #a29709;border-radius: 3px;}.ace-dracula .ace_fold {background-color: #50fa7b;border-color: #f8f8f2}.ace-dracula .ace_keyword {color: #ff79c6}.ace-dracula .ace_constant.ace_language {color: #bd93f9}.ace-dracula .ace_constant.ace_numeric {color: #bd93f9}.ace-dracula .ace_constant.ace_character {color: #bd93f9}.ace-dracula .ace_constant.ace_character.ace_escape {color: #ff79c6}.ace-dracula .ace_constant.ace_other {color: #bd93f9}.ace-dracula .ace_support.ace_function {color: #8be9fd}.ace-dracula .ace_support.ace_constant {color: #6be5fd}.ace-dracula .ace_support.ace_class {font-style: italic;color: #66d9ef}.ace-dracula .ace_support.ace_type {font-style: italic;color: #66d9ef}.ace-dracula .ace_storage {color: #ff79c6}.ace-dracula .ace_storage.ace_type {font-style: italic;color: #8be9fd}.ace-dracula .ace_invalid {color: #F8F8F0;background-color: #ff79c6}.ace-dracula .ace_invalid.ace_deprecated {color: #F8F8F0;background-color: #bd93f9}.ace-dracula .ace_string {color: #f1fa8c}.ace-dracula .ace_comment {color: #6272a4}.ace-dracula .ace_variable {color: #50fa7b}.ace-dracula .ace_variable.ace_parameter {font-style: italic;color: #ffb86c}.ace-dracula .ace_entity.ace_other.ace_attribute-name {color: #50fa7b}.ace-dracula .ace_entity.ace_name.ace_function {color: #50fa7b}.ace-dracula .ace_entity.ace_name.ace_tag {color: #ff79c6}.ace-dracula .ace_invisible {color: #626680;}.ace-dracula .ace_indent-guide {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWNgYGBgYHB3d/8PAAOIAdULw8qMAAAAAElFTkSuQmCC) right repeat-y}
+/*# sourceURL=ace/css/ace-dracula */</style><style id="ace-github">.ace-github .ace_gutter {background: #e8e8e8;color: #AAA;}.ace-github  {background: #fff;color: #000;}.ace-github .ace_keyword {font-weight: bold;}.ace-github .ace_string {color: #D14;}.ace-github .ace_variable.ace_class {color: teal;}.ace-github .ace_constant.ace_numeric {color: #099;}.ace-github .ace_constant.ace_buildin {color: #0086B3;}.ace-github .ace_support.ace_function {color: #0086B3;}.ace-github .ace_comment {color: #998;font-style: italic;}.ace-github .ace_variable.ace_language  {color: #0086B3;}.ace-github .ace_paren {font-weight: bold;}.ace-github .ace_boolean {font-weight: bold;}.ace-github .ace_string.ace_regexp {color: #009926;font-weight: normal;}.ace-github .ace_variable.ace_instance {color: teal;}.ace-github .ace_constant.ace_language {font-weight: bold;}.ace-github .ace_cursor {color: black;}.ace-github.ace_focus .ace_marker-layer .ace_active-line {background: rgb(255, 255, 204);}.ace-github .ace_marker-layer .ace_active-line {background: rgb(245, 245, 245);}.ace-github .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-github.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-github.ace_nobold .ace_line > span {font-weight: normal !important;}.ace-github .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-github .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-github .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-github .ace_gutter-active-line {background-color : rgba(0, 0, 0, 0.07);}.ace-github .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-github .ace_invisible {color: #BFBFBF}.ace-github .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-github .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-github */</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style id="ace_editor.css">.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}.ace_editor {position: relative;overflow: hidden;padding: 0;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;text-align: left;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;box-sizing: border-box;min-width: 100%;contain: style size layout;font-variant-ligatures: no-common-ligatures;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;contain: style size layout;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {position: absolute;top: 0;left: 0;right: 0;padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {contain: strict;position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;contain: strict;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: transparent;color: inherit;z-index: 1000;opacity: 1;}.ace_composition_placeholder { color: transparent }.ace_composition_marker { border-bottom: 1px solid;position: absolute;border-radius: 0;margin-top: 1px;}[ace_nocontext=true] {transform: none!important;filter: none!important;clip-path: none!important;mask : none!important;contain: none!important;perspective: none!important;mix-blend-mode: initial!important;z-index: auto;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;height: 1000000px;contain: style size layout;}.ace_text-layer {font: inherit !important;position: absolute;height: 1000000px;width: 1000000px;contain: style size layout;}.ace_text-layer > .ace_line, .ace_text-layer > .ace_line_group {contain: style size layout;position: absolute;top: 0;left: 0;right: 0;}.ace_hidpi .ace_text-layer,.ace_hidpi .ace_gutter-layer,.ace_hidpi .ace_content,.ace_hidpi .ace_gutter {contain: strict;will-change: transform;}.ace_hidpi .ace_text-layer > .ace_line, .ace_hidpi .ace_text-layer > .ace_line_group {contain: strict;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_hasPlaceholder .ace_hidden-cursors .ace_cursor {opacity: 0;}.ace_smooth-blinking .ace_cursor {transition: opacity 0.18s;}.ace_animate-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: step-end;animation-name: blink-ace-animate;animation-iteration-count: infinite;}.ace_animate-blinking.ace_smooth-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: ease-in-out;animation-name: blink-ace-animate-smooth;}@keyframes blink-ace-animate {from, to { opacity: 1; }60% { opacity: 0; }}@keyframes blink-ace-animate-smooth {from, to { opacity: 1; }45% { opacity: 1; }60% { opacity: 0; }85% { opacity: 0; }}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_error_bracket {position: absolute;border-bottom: 1px solid #DE5555;border-radius: 0;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;box-sizing: border-box;}.ace_line .ace_fold {box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_inline_button {border: 1px solid lightgray;display: inline-block;margin: -1px 8px;padding: 0 5px;pointer-events: auto;cursor: pointer;}.ace_inline_button:hover {border-color: gray;background: rgba(200,200,200,0.2);display: inline-block;pointer-events: auto;}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_mobile-menu {position: absolute;line-height: 1.5;border-radius: 4px;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;background: white;box-shadow: 1px 3px 2px grey;border: 1px solid #dcdcdc;color: black;}.ace_dark > .ace_mobile-menu {background: #333;color: #ccc;box-shadow: 1px 3px 2px grey;border: 1px solid #444;}.ace_mobile-button {padding: 2px;cursor: pointer;overflow: hidden;}.ace_mobile-button:hover {background-color: #eee;opacity:1;}.ace_mobile-button:active {background-color: #ddd;}.ace_placeholder {font-family: arial;transform: scale(0.9);transform-origin: left;white-space: pre;opacity: 0.7;margin: 0 10px;}
+/*# sourceURL=ace/css/ace_editor.css */</style><link rel="shortcut icon" href="https://onecompiler.com/favicon.ico"><link rel="stylesheet" href="./C - OneCompiler - Write, run and share C code online_files/css"><script async="" src="./C - OneCompiler - Write, run and share C code online_files/analytics.js.download"></script><script async="" custom-element="amp-timeago" src="./C - OneCompiler - Write, run and share C code online_files/highlight.min.js.download"></script><meta name="viewport" content="width=device-width"><title>C - OneCompiler - Write, run and share C code online</title><meta name="next-head-count" content="3"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/23d9fd8199379e65aa02.css" as="style"><link rel="stylesheet" href="./C - OneCompiler - Write, run and share C code online_files/23d9fd8199379e65aa02.css" data-n-g=""><noscript data-n-css=""></noscript><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/main-f008a33faf30dda9014f.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/webpack-fdac3483aca3157d8624.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/framework.f459cfe0be1f959afc11.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/4cc32b01a4c91be6cab161ff1195ed8f2ee1dd1f.5c0b1164ef694e50b250.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/353bf654caf2a10e8fc4a1c7755682b3533fea75.6943ddaaa52c80462666.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/a7c2b880a1e4eafcc3e5e1757b01afba2513dc47.74346571a21aee890254.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/9f8d413d6a070e2a7df4c5511317375762151af6.24613109132ce743f8c9.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/_app-a2326b4f5f15a158ea15.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/0b7b90cd.aa72732e0783bba5c6be.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/372794fb2b9cbb2fdc65927d2b690cb19de4eff5.e844b0529942757375da.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/2252775a72d6f3c4aa7d084c7cd614f5f59f2e8d.96ed66d95c5813c81b9f.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/a52550472868d90742ea58218f60241e2cfcac29.57e3a8d45e8a3f6424a3.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/699ce786f02bc5f7ea097eb9b525545a2f398b6e.95a1d32f57c6f73d0bc8.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/a191e41b675a667b5da3408047e56c9de19310d5.d2f6278b89b37be5fc40.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/eb18c69b7bb35f6c60cc729e0261a956dac627d2.1f4cd810dc17f4d2f822.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/f3f48b4a51b25a052761d29dea0214a1c20af86c.835f27e1e86d3e900d56.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/7ea9e4e76cd1ae6ae0f4e9b41438aae99d5ea1e9.f907e4316ab299b30579.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/48a32005e0a090c6a21ccca766b7c91a789d5d7c.a1ff3ab71df82395cf95.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/d1c5dcc0bb63f124aea5d611e4e9d342e12907db.902106aebd6d75bcd8cd.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/3a8f64077cb30b3657b9e808edaf0421cc4f3680.4508afb0d3a3bda0ac42.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/8db4a9c0c4c72ed7e2af7f37ed6ed196fd917df5.1480c49ac244a49118a7.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/bf240ec8346ec7915119adf045cb55a20052cf37.2406191d145a6869f971.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/31.d3c74d9534ab8b2b2c65.js.download" as="script"><link rel="preload" href="./C - OneCompiler - Write, run and share C code online_files/index-e35451d293b522761a61.js.download" as="script"><style data-jss="" data-meta="MuiCssBaseline">
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+strong, b {
+  font-weight: 700;
+}
+body {
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0;
+  font-size: 0.875rem;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 1.43;
+  background-color: #fff;
+}
+@media print {
+  body {
+    background-color: #fff;
+  }
+}
+body::backdrop {
+  background-color: #fff;
+}
+</style><style data-jss="" data-meta="PrivateHiddenCss">
+@media (min-width:0px) and (max-width:599.95px) {
+  .jss46 {
+    display: none;
+  }
+}
+@media (min-width:0px) {
+  .jss47 {
+    display: none;
+  }
+}
+@media (max-width:599.95px) {
+  .jss48 {
+    display: none;
+  }
+}
+@media (min-width:600px) and (max-width:959.95px) {
+  .jss49 {
+    display: none;
+  }
+}
+@media (min-width:600px) {
+  .jss50 {
+    display: none;
+  }
+}
+@media (max-width:959.95px) {
+  .jss51 {
+    display: none;
+  }
+}
+@media (min-width:960px) and (max-width:1279.95px) {
+  .jss52 {
+    display: none;
+  }
+}
+@media (min-width:960px) {
+  .jss53 {
+    display: none;
+  }
+}
+@media (max-width:1279.95px) {
+  .jss54 {
+    display: none;
+  }
+}
+@media (min-width:1280px) and (max-width:1919.95px) {
+  .jss55 {
+    display: none;
+  }
+}
+@media (min-width:1280px) {
+  .jss56 {
+    display: none;
+  }
+}
+@media (max-width:1919.95px) {
+  .jss57 {
+    display: none;
+  }
+}
+@media (min-width:1920px) {
+  .jss58 {
+    display: none;
+  }
+}
+@media (min-width:1920px) {
+  .jss59 {
+    display: none;
+  }
+}
+@media (min-width:0px) {
+  .jss60 {
+    display: none;
+  }
+}
+</style><style data-jss="" data-meta="MuiDivider">
+.MuiDivider-root {
+  border: none;
+  height: 1px;
+  margin: 0;
+  flex-shrink: 0;
+  background-color: #eeeeee;
+}
+.MuiDivider-absolute {
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+.MuiDivider-inset {
+  margin-left: 72px;
+}
+.MuiDivider-light {
+  background-color: rgba(238, 238, 238, 0.08);
+}
+.MuiDivider-middle {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.MuiDivider-vertical {
+  width: 1px;
+  height: 100%;
+}
+.MuiDivider-flexItem {
+  height: auto;
+  align-self: stretch;
+}
+</style><style data-jss="" data-meta="MuiTouchRipple">
+.MuiTouchRipple-root {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+  position: absolute;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.MuiTouchRipple-ripple {
+  opacity: 0;
+  position: absolute;
+}
+.MuiTouchRipple-rippleVisible {
+  opacity: 0.3;
+  animation: MuiTouchRipple-keyframes-enter 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+}
+.MuiTouchRipple-ripplePulsate {
+  animation-duration: 200ms;
+}
+.MuiTouchRipple-child {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 1;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+.MuiTouchRipple-childLeaving {
+  opacity: 0;
+  animation: MuiTouchRipple-keyframes-exit 550ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.MuiTouchRipple-childPulsate {
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: MuiTouchRipple-keyframes-pulsate 2500ms cubic-bezier(0.4, 0, 0.2, 1) 200ms infinite;
+}
+@-webkit-keyframes MuiTouchRipple-keyframes-enter {
+  0% {
+    opacity: 0.1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes MuiTouchRipple-keyframes-exit {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes MuiTouchRipple-keyframes-pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.92);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+</style><style data-jss="" data-meta="MuiButtonBase">
+.MuiButtonBase-root {
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  display: inline-flex;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  border-radius: 0;
+  vertical-align: middle;
+  -moz-appearance: none;
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiButtonBase-root::-moz-focus-inner {
+  border-style: none;
+}
+.MuiButtonBase-root.Mui-disabled {
+  cursor: default;
+  pointer-events: none;
+}
+@media print {
+  .MuiButtonBase-root {
+    -webkit-print-color-adjust: exact;
+  }
+}
+</style><style data-jss="" data-meta="MuiButton">
+.MuiButton-root {
+  color: rgba(0, 0, 0, 0.87);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-family: Lato;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.MuiButton-root:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.MuiButton-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .MuiButton-root:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-root:hover.Mui-disabled {
+  background-color: transparent;
+}
+.MuiButton-label {
+  width: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+}
+.MuiButton-text {
+  padding: 6px 8px;
+}
+.MuiButton-textPrimary {
+  color: #5063f0;
+}
+.MuiButton-textPrimary:hover {
+  background-color: rgba(80, 99, 240, 0.04);
+}
+@media (hover: none) {
+  .MuiButton-textPrimary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-textSecondary {
+  color: rgba(233, 30, 99, 1);
+}
+.MuiButton-textSecondary:hover {
+  background-color: rgba(233, 30, 99, 0.04);
+}
+@media (hover: none) {
+  .MuiButton-textSecondary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-outlined {
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  padding: 5px 15px;
+}
+.MuiButton-outlined.Mui-disabled {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+.MuiButton-outlinedPrimary {
+  color: #5063f0;
+  border: 1px solid rgba(80, 99, 240, 0.5);
+}
+.MuiButton-outlinedPrimary:hover {
+  border: 1px solid #5063f0;
+  background-color: rgba(80, 99, 240, 0.04);
+}
+@media (hover: none) {
+  .MuiButton-outlinedPrimary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-outlinedSecondary {
+  color: rgba(233, 30, 99, 1);
+  border: 1px solid rgba(233, 30, 99, 0.5);
+}
+.MuiButton-outlinedSecondary:hover {
+  border: 1px solid rgba(233, 30, 99, 1);
+  background-color: rgba(233, 30, 99, 0.04);
+}
+.MuiButton-outlinedSecondary.Mui-disabled {
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .MuiButton-outlinedSecondary:hover {
+    background-color: transparent;
+  }
+}
+.MuiButton-contained {
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+  background-color: #e0e0e0;
+}
+.MuiButton-contained:hover {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+  background-color: #d5d5d5;
+}
+.MuiButton-contained.Mui-focusVisible {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.MuiButton-contained:active {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.MuiButton-contained.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+@media (hover: none) {
+  .MuiButton-contained:hover {
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+    background-color: #e0e0e0;
+  }
+}
+.MuiButton-contained:hover.Mui-disabled {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.MuiButton-containedPrimary {
+  color: #fff;
+  background-color: #5063f0;
+}
+.MuiButton-containedPrimary:hover {
+  background-color: #3845a8;
+}
+@media (hover: none) {
+  .MuiButton-containedPrimary:hover {
+    background-color: #5063f0;
+  }
+}
+.MuiButton-containedSecondary {
+  color: white;
+  background-color: rgba(233, 30, 99, 1);
+}
+.MuiButton-containedSecondary:hover {
+  background-color: rgba(163, 21, 69, 1);
+}
+@media (hover: none) {
+  .MuiButton-containedSecondary:hover {
+    background-color: rgba(233, 30, 99, 1);
+  }
+}
+.MuiButton-disableElevation {
+  box-shadow: none;
+}
+.MuiButton-disableElevation:hover {
+  box-shadow: none;
+}
+.MuiButton-disableElevation.Mui-focusVisible {
+  box-shadow: none;
+}
+.MuiButton-disableElevation:active {
+  box-shadow: none;
+}
+.MuiButton-disableElevation.Mui-disabled {
+  box-shadow: none;
+}
+.MuiButton-colorInherit {
+  color: inherit;
+  border-color: currentColor;
+}
+.MuiButton-textSizeSmall {
+  padding: 4px 5px;
+  font-size: 0.8125rem;
+}
+.MuiButton-textSizeLarge {
+  padding: 8px 11px;
+  font-size: 0.9375rem;
+}
+.MuiButton-outlinedSizeSmall {
+  padding: 3px 9px;
+  font-size: 0.8125rem;
+}
+.MuiButton-outlinedSizeLarge {
+  padding: 7px 21px;
+  font-size: 0.9375rem;
+}
+.MuiButton-containedSizeSmall {
+  padding: 4px 10px;
+  font-size: 0.8125rem;
+}
+.MuiButton-containedSizeLarge {
+  padding: 8px 22px;
+  font-size: 0.9375rem;
+}
+.MuiButton-fullWidth {
+  width: 100%;
+}
+.MuiButton-startIcon {
+  display: inherit;
+  margin-left: -4px;
+  margin-right: 8px;
+}
+.MuiButton-startIcon.MuiButton-iconSizeSmall {
+  margin-left: -2px;
+}
+.MuiButton-endIcon {
+  display: inherit;
+  margin-left: 8px;
+  margin-right: -4px;
+}
+.MuiButton-endIcon.MuiButton-iconSizeSmall {
+  margin-right: -2px;
+}
+.MuiButton-iconSizeSmall > *:first-child {
+  font-size: 18px;
+}
+.MuiButton-iconSizeMedium > *:first-child {
+  font-size: 20px;
+}
+.MuiButton-iconSizeLarge > *:first-child {
+  font-size: 22px;
+}
+</style><style data-jss="" data-meta="MuiTypography">
+.MuiTypography-root {
+  margin: 0;
+}
+.MuiTypography-body2 {
+  font-size: 0.875rem;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 1.43;
+}
+.MuiTypography-body1 {
+  font-size: 1rem;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.MuiTypography-caption {
+  font-size: 0.75rem;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 1.66;
+}
+.MuiTypography-button {
+  font-size: 0.875rem;
+  font-family: Lato;
+  font-weight: 500;
+  line-height: 1.75;
+  text-transform: uppercase;
+}
+.MuiTypography-h1 {
+  font-size: 3.5rem;
+  font-family: Lato;
+  font-weight: 300;
+  line-height: 1.167;
+}
+@media (min-width:600px) {
+  .MuiTypography-h1 {
+    font-size: 4.7129rem;
+  }
+}
+@media (min-width:960px) {
+  .MuiTypography-h1 {
+    font-size: 5.3556rem;
+  }
+}
+@media (min-width:1280px) {
+  .MuiTypography-h1 {
+    font-size: 5.9983rem;
+  }
+}
+.MuiTypography-h2 {
+  font-size: 2.375rem;
+  font-family: Lato;
+  font-weight: 300;
+  line-height: 1.2;
+}
+@media (min-width:600px) {
+  .MuiTypography-h2 {
+    font-size: 2.9167rem;
+  }
+}
+@media (min-width:960px) {
+  .MuiTypography-h2 {
+    font-size: 3.3333rem;
+  }
+}
+@media (min-width:1280px) {
+  .MuiTypography-h2 {
+    font-size: 3.75rem;
+  }
+}
+.MuiTypography-h3 {
+  font-size: 2rem;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 1.167;
+}
+@media (min-width:600px) {
+  .MuiTypography-h3 {
+    font-size: 2.5707rem;
+  }
+}
+@media (min-width:960px) {
+  .MuiTypography-h3 {
+    font-size: 2.7849rem;
+  }
+}
+@media (min-width:1280px) {
+  .MuiTypography-h3 {
+    font-size: 2.9991rem;
+  }
+}
+.MuiTypography-h4 {
+  font-size: 1.5625rem;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 1.235;
+}
+@media (min-width:600px) {
+  .MuiTypography-h4 {
+    font-size: 1.8219rem;
+  }
+}
+@media (min-width:960px) {
+  .MuiTypography-h4 {
+    font-size: 2.0243rem;
+  }
+}
+@media (min-width:1280px) {
+  .MuiTypography-h4 {
+    font-size: 2.0243rem;
+  }
+}
+.MuiTypography-h5 {
+  font-size: 1.25rem;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 1.334;
+}
+@media (min-width:600px) {
+  .MuiTypography-h5 {
+    font-size: 1.3118rem;
+  }
+}
+@media (min-width:960px) {
+  .MuiTypography-h5 {
+    font-size: 1.4993rem;
+  }
+}
+@media (min-width:1280px) {
+  .MuiTypography-h5 {
+    font-size: 1.4993rem;
+  }
+}
+.MuiTypography-h6 {
+  font-size: 1.125rem;
+  font-family: Lato;
+  font-weight: 500;
+  line-height: 1.6;
+}
+@media (min-width:600px) {
+  .MuiTypography-h6 {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width:960px) {
+  .MuiTypography-h6 {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width:1280px) {
+  .MuiTypography-h6 {
+    font-size: 1.25rem;
+  }
+}
+.MuiTypography-subtitle1 {
+  font-size: 1rem;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 1.75;
+}
+.MuiTypography-subtitle2 {
+  font-size: 0.875rem;
+  font-family: Lato;
+  font-weight: 500;
+  line-height: 1.57;
+}
+.MuiTypography-overline {
+  font-size: 0.75rem;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 2.66;
+  text-transform: uppercase;
+}
+.MuiTypography-srOnly {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+.MuiTypography-alignLeft {
+  text-align: left;
+}
+.MuiTypography-alignCenter {
+  text-align: center;
+}
+.MuiTypography-alignRight {
+  text-align: right;
+}
+.MuiTypography-alignJustify {
+  text-align: justify;
+}
+.MuiTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.MuiTypography-gutterBottom {
+  margin-bottom: 0.35em;
+}
+.MuiTypography-paragraph {
+  margin-bottom: 16px;
+}
+.MuiTypography-colorInherit {
+  color: inherit;
+}
+.MuiTypography-colorPrimary {
+  color: #5063f0;
+}
+.MuiTypography-colorSecondary {
+  color: rgba(233, 30, 99, 1);
+}
+.MuiTypography-colorTextPrimary {
+  color: rgba(0, 0, 0, 0.87);
+}
+.MuiTypography-colorTextSecondary {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiTypography-colorError {
+  color: #f44336;
+}
+.MuiTypography-displayInline {
+  display: inline;
+}
+.MuiTypography-displayBlock {
+  display: block;
+}
+</style><style data-jss="" data-meta="MuiPaper">
+.MuiPaper-root {
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: #fff;
+}
+.MuiPaper-rounded {
+  border-radius: 4px;
+}
+.MuiPaper-outlined {
+  border: 1px solid #eeeeee;
+}
+.MuiPaper-elevation0 {
+  box-shadow: none;
+}
+.MuiPaper-elevation1 {
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation2 {
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation3 {
+  box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation4 {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation5 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation6 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation7 {
+  box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation8 {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation9 {
+  box-shadow: 0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation10 {
+  box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation11 {
+  box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation12 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation13 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation14 {
+  box-shadow: 0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation15 {
+  box-shadow: 0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation16 {
+  box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation17 {
+  box-shadow: 0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation18 {
+  box-shadow: 0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation19 {
+  box-shadow: 0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation20 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation21 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation22 {
+  box-shadow: 0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation23 {
+  box-shadow: 0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation24 {
+  box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);
+}
+</style><style data-jss="" data-meta="MuiDialog">
+@media print {
+  .MuiDialog-root {
+    position: absolute !important;
+  }
+}
+.MuiDialog-scrollPaper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.MuiDialog-scrollBody {
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+}
+.MuiDialog-scrollBody:after {
+  width: 0;
+  height: 100%;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+}
+.MuiDialog-container {
+  height: 100%;
+  outline: 0;
+}
+@media print {
+  .MuiDialog-container {
+    height: auto;
+  }
+}
+.MuiDialog-paper {
+  margin: 32px;
+  position: relative;
+  overflow-y: auto;
+}
+@media print {
+  .MuiDialog-paper {
+    box-shadow: none;
+    overflow-y: visible;
+  }
+}
+.MuiDialog-paperScrollPaper {
+  display: flex;
+  max-height: calc(100% - 64px);
+  flex-direction: column;
+}
+.MuiDialog-paperScrollBody {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.MuiDialog-paperWidthFalse {
+  max-width: calc(100% - 64px);
+}
+.MuiDialog-paperWidthXs {
+  max-width: 444px;
+}
+@media (max-width:507.95px) {
+  .MuiDialog-paperWidthXs.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperWidthSm {
+  max-width: 600px;
+}
+@media (max-width:663.95px) {
+  .MuiDialog-paperWidthSm.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperWidthMd {
+  max-width: 960px;
+}
+@media (max-width:1023.95px) {
+  .MuiDialog-paperWidthMd.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperWidthLg {
+  max-width: 1280px;
+}
+@media (max-width:1343.95px) {
+  .MuiDialog-paperWidthLg.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperWidthXl {
+  max-width: 1920px;
+}
+@media (max-width:1983.95px) {
+  .MuiDialog-paperWidthXl.MuiDialog-paperScrollBody {
+    max-width: calc(100% - 64px);
+  }
+}
+.MuiDialog-paperFullWidth {
+  width: calc(100% - 64px);
+}
+.MuiDialog-paperFullScreen {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  max-width: 100%;
+  max-height: none;
+  border-radius: 0;
+}
+.MuiDialog-paperFullScreen.MuiDialog-paperScrollBody {
+  margin: 0;
+  max-width: 100%;
+}
+</style><style data-jss="" data-meta="MuiContainer">
+.MuiContainer-root {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width:600px) {
+  .MuiContainer-root {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+.MuiContainer-disableGutters {
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width:600px) {
+  .MuiContainer-fixed {
+    max-width: 600px;
+  }
+}
+@media (min-width:960px) {
+  .MuiContainer-fixed {
+    max-width: 960px;
+  }
+}
+@media (min-width:1280px) {
+  .MuiContainer-fixed {
+    max-width: 1280px;
+  }
+}
+@media (min-width:1920px) {
+  .MuiContainer-fixed {
+    max-width: 1920px;
+  }
+}
+@media (min-width:0px) {
+  .MuiContainer-maxWidthXs {
+    max-width: 444px;
+  }
+}
+@media (min-width:600px) {
+  .MuiContainer-maxWidthSm {
+    max-width: 600px;
+  }
+}
+@media (min-width:960px) {
+  .MuiContainer-maxWidthMd {
+    max-width: 960px;
+  }
+}
+@media (min-width:1280px) {
+  .MuiContainer-maxWidthLg {
+    max-width: 1280px;
+  }
+}
+@media (min-width:1920px) {
+  .MuiContainer-maxWidthXl {
+    max-width: 1920px;
+  }
+}
+</style><style data-jss="" data-meta="MuiGrid">
+.MuiGrid-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.MuiGrid-item {
+  margin: 0;
+  box-sizing: border-box;
+}
+.MuiGrid-zeroMinWidth {
+  min-width: 0;
+}
+.MuiGrid-direction-xs-column {
+  flex-direction: column;
+}
+.MuiGrid-direction-xs-column-reverse {
+  flex-direction: column-reverse;
+}
+.MuiGrid-direction-xs-row-reverse {
+  flex-direction: row-reverse;
+}
+.MuiGrid-wrap-xs-nowrap {
+  flex-wrap: nowrap;
+}
+.MuiGrid-wrap-xs-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+.MuiGrid-align-items-xs-center {
+  align-items: center;
+}
+.MuiGrid-align-items-xs-flex-start {
+  align-items: flex-start;
+}
+.MuiGrid-align-items-xs-flex-end {
+  align-items: flex-end;
+}
+.MuiGrid-align-items-xs-baseline {
+  align-items: baseline;
+}
+.MuiGrid-align-content-xs-center {
+  align-content: center;
+}
+.MuiGrid-align-content-xs-flex-start {
+  align-content: flex-start;
+}
+.MuiGrid-align-content-xs-flex-end {
+  align-content: flex-end;
+}
+.MuiGrid-align-content-xs-space-between {
+  align-content: space-between;
+}
+.MuiGrid-align-content-xs-space-around {
+  align-content: space-around;
+}
+.MuiGrid-justify-xs-center {
+  justify-content: center;
+}
+.MuiGrid-justify-xs-flex-end {
+  justify-content: flex-end;
+}
+.MuiGrid-justify-xs-space-between {
+  justify-content: space-between;
+}
+.MuiGrid-justify-xs-space-around {
+  justify-content: space-around;
+}
+.MuiGrid-justify-xs-space-evenly {
+  justify-content: space-evenly;
+}
+.MuiGrid-spacing-xs-1 {
+  width: calc(100% + 8px);
+  margin: -4px;
+}
+.MuiGrid-spacing-xs-1 > .MuiGrid-item {
+  padding: 4px;
+}
+.MuiGrid-spacing-xs-2 {
+  width: calc(100% + 16px);
+  margin: -8px;
+}
+.MuiGrid-spacing-xs-2 > .MuiGrid-item {
+  padding: 8px;
+}
+.MuiGrid-spacing-xs-3 {
+  width: calc(100% + 24px);
+  margin: -12px;
+}
+.MuiGrid-spacing-xs-3 > .MuiGrid-item {
+  padding: 12px;
+}
+.MuiGrid-spacing-xs-4 {
+  width: calc(100% + 32px);
+  margin: -16px;
+}
+.MuiGrid-spacing-xs-4 > .MuiGrid-item {
+  padding: 16px;
+}
+.MuiGrid-spacing-xs-5 {
+  width: calc(100% + 40px);
+  margin: -20px;
+}
+.MuiGrid-spacing-xs-5 > .MuiGrid-item {
+  padding: 20px;
+}
+.MuiGrid-spacing-xs-6 {
+  width: calc(100% + 48px);
+  margin: -24px;
+}
+.MuiGrid-spacing-xs-6 > .MuiGrid-item {
+  padding: 24px;
+}
+.MuiGrid-spacing-xs-7 {
+  width: calc(100% + 56px);
+  margin: -28px;
+}
+.MuiGrid-spacing-xs-7 > .MuiGrid-item {
+  padding: 28px;
+}
+.MuiGrid-spacing-xs-8 {
+  width: calc(100% + 64px);
+  margin: -32px;
+}
+.MuiGrid-spacing-xs-8 > .MuiGrid-item {
+  padding: 32px;
+}
+.MuiGrid-spacing-xs-9 {
+  width: calc(100% + 72px);
+  margin: -36px;
+}
+.MuiGrid-spacing-xs-9 > .MuiGrid-item {
+  padding: 36px;
+}
+.MuiGrid-spacing-xs-10 {
+  width: calc(100% + 80px);
+  margin: -40px;
+}
+.MuiGrid-spacing-xs-10 > .MuiGrid-item {
+  padding: 40px;
+}
+.MuiGrid-grid-xs-auto {
+  flex-grow: 0;
+  max-width: none;
+  flex-basis: auto;
+}
+.MuiGrid-grid-xs-true {
+  flex-grow: 1;
+  max-width: 100%;
+  flex-basis: 0;
+}
+.MuiGrid-grid-xs-1 {
+  flex-grow: 0;
+  max-width: 8.333333%;
+  flex-basis: 8.333333%;
+}
+.MuiGrid-grid-xs-2 {
+  flex-grow: 0;
+  max-width: 16.666667%;
+  flex-basis: 16.666667%;
+}
+.MuiGrid-grid-xs-3 {
+  flex-grow: 0;
+  max-width: 25%;
+  flex-basis: 25%;
+}
+.MuiGrid-grid-xs-4 {
+  flex-grow: 0;
+  max-width: 33.333333%;
+  flex-basis: 33.333333%;
+}
+.MuiGrid-grid-xs-5 {
+  flex-grow: 0;
+  max-width: 41.666667%;
+  flex-basis: 41.666667%;
+}
+.MuiGrid-grid-xs-6 {
+  flex-grow: 0;
+  max-width: 50%;
+  flex-basis: 50%;
+}
+.MuiGrid-grid-xs-7 {
+  flex-grow: 0;
+  max-width: 58.333333%;
+  flex-basis: 58.333333%;
+}
+.MuiGrid-grid-xs-8 {
+  flex-grow: 0;
+  max-width: 66.666667%;
+  flex-basis: 66.666667%;
+}
+.MuiGrid-grid-xs-9 {
+  flex-grow: 0;
+  max-width: 75%;
+  flex-basis: 75%;
+}
+.MuiGrid-grid-xs-10 {
+  flex-grow: 0;
+  max-width: 83.333333%;
+  flex-basis: 83.333333%;
+}
+.MuiGrid-grid-xs-11 {
+  flex-grow: 0;
+  max-width: 91.666667%;
+  flex-basis: 91.666667%;
+}
+.MuiGrid-grid-xs-12 {
+  flex-grow: 0;
+  max-width: 100%;
+  flex-basis: 100%;
+}
+@media (min-width:600px) {
+  .MuiGrid-grid-sm-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-sm-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-sm-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-sm-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-sm-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-sm-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-sm-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-sm-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-sm-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-sm-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-sm-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-sm-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-sm-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-sm-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:960px) {
+  .MuiGrid-grid-md-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-md-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-md-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-md-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-md-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-md-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-md-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-md-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-md-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-md-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-md-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-md-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-md-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-md-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:1280px) {
+  .MuiGrid-grid-lg-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-lg-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-lg-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-lg-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-lg-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-lg-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-lg-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-lg-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-lg-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-lg-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-lg-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-lg-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-lg-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-lg-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:1920px) {
+  .MuiGrid-grid-xl-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-xl-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-xl-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-xl-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-xl-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-xl-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-xl-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-xl-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-xl-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-xl-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-xl-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-xl-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-xl-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-xl-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss80 {
+  color: white;
+  background: #1b1642;
+  margin-top: 60px;
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+.jss81 {
+  text-decoration: none;
+}
+.jss82 {
+  color: #adb5bd;
+  text-align: center;
+}
+.jss83 {
+  color: #FFF;
+}
+</style><style data-jss="" data-meta="MuiSvgIcon">
+.MuiSvgIcon-root {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 1.5rem;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
+}
+.MuiSvgIcon-colorPrimary {
+  color: #5063f0;
+}
+.MuiSvgIcon-colorSecondary {
+  color: rgba(233, 30, 99, 1);
+}
+.MuiSvgIcon-colorAction {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiSvgIcon-colorError {
+  color: #f44336;
+}
+.MuiSvgIcon-colorDisabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+.MuiSvgIcon-fontSizeInherit {
+  font-size: inherit;
+}
+.MuiSvgIcon-fontSizeSmall {
+  font-size: 1.25rem;
+}
+.MuiSvgIcon-fontSizeLarge {
+  font-size: 2.1875rem;
+}
+</style><style data-jss="" data-meta="MuiIconButton">
+.MuiIconButton-root {
+  flex: 0 0 auto;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 12px;
+  overflow: visible;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 50%;
+}
+.MuiIconButton-root:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.MuiIconButton-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+  background-color: transparent;
+}
+@media (hover: none) {
+  .MuiIconButton-root:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButton-edgeStart {
+  margin-left: -12px;
+}
+.MuiIconButton-sizeSmall.MuiIconButton-edgeStart {
+  margin-left: -3px;
+}
+.MuiIconButton-edgeEnd {
+  margin-right: -12px;
+}
+.MuiIconButton-sizeSmall.MuiIconButton-edgeEnd {
+  margin-right: -3px;
+}
+.MuiIconButton-colorInherit {
+  color: inherit;
+}
+.MuiIconButton-colorPrimary {
+  color: #5063f0;
+}
+.MuiIconButton-colorPrimary:hover {
+  background-color: rgba(80, 99, 240, 0.04);
+}
+@media (hover: none) {
+  .MuiIconButton-colorPrimary:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButton-colorSecondary {
+  color: rgba(233, 30, 99, 1);
+}
+.MuiIconButton-colorSecondary:hover {
+  background-color: rgba(233, 30, 99, 0.04);
+}
+@media (hover: none) {
+  .MuiIconButton-colorSecondary:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButton-sizeSmall {
+  padding: 3px;
+  font-size: 1.125rem;
+}
+.MuiIconButton-label {
+  width: 100%;
+  display: flex;
+  align-items: inherit;
+  justify-content: inherit;
+}
+</style><style data-jss="" data-meta="MuiInputBase">
+@-webkit-keyframes mui-auto-fill {}
+@-webkit-keyframes mui-auto-fill-cancel {}
+.MuiInputBase-root {
+  color: rgba(0, 0, 0, 0.87);
+  cursor: text;
+  display: inline-flex;
+  position: relative;
+  font-size: 1rem;
+  box-sizing: border-box;
+  align-items: center;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 1.1876em;
+}
+.MuiInputBase-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.38);
+  cursor: default;
+}
+.MuiInputBase-multiline {
+  padding: 6px 0 7px;
+}
+.MuiInputBase-multiline.MuiInputBase-marginDense {
+  padding-top: 3px;
+}
+.MuiInputBase-fullWidth {
+  width: 100%;
+}
+.MuiInputBase-input {
+  font: inherit;
+  color: currentColor;
+  width: 100%;
+  border: 0;
+  height: 1.1876em;
+  margin: 0;
+  display: block;
+  padding: 6px 0 7px;
+  min-width: 0;
+  background: none;
+  box-sizing: content-box;
+  animation-name: mui-auto-fill-cancel;
+  letter-spacing: inherit;
+  animation-duration: 10ms;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiInputBase-input::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input::-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiInputBase-input:focus {
+  outline: 0;
+}
+.MuiInputBase-input:invalid {
+  box-shadow: none;
+}
+.MuiInputBase-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.MuiInputBase-input.Mui-disabled {
+  opacity: 1;
+}
+.MuiInputBase-input:-webkit-autofill {
+  animation-name: mui-auto-fill;
+  animation-duration: 5000s;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-webkit-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-moz-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:-ms-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-ms-input-placeholder {
+  opacity: 0 !important;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-webkit-input-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-moz-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus:-ms-input-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input:focus::-ms-input-placeholder {
+  opacity: 0.42;
+}
+.MuiInputBase-inputMarginDense {
+  padding-top: 3px;
+}
+.MuiInputBase-inputMultiline {
+  height: auto;
+  resize: none;
+  padding: 0;
+}
+.MuiInputBase-inputTypeSearch {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+</style><style data-jss="" data-meta="PrivateNotchedOutline">
+.jss119 {
+  top: -5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0 8px;
+  overflow: hidden;
+  position: absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.jss120 {
+  padding: 0;
+  text-align: left;
+  transition: width 150ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  line-height: 11px;
+}
+.jss121 {
+  width: auto;
+  height: 11px;
+  display: block;
+  padding: 0;
+  font-size: 0.75em;
+  max-width: 0.01px;
+  text-align: left;
+  transition: max-width 50ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  visibility: hidden;
+}
+.jss121 > span {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.jss122 {
+  max-width: 1000px;
+  transition: max-width 100ms cubic-bezier(0.0, 0, 0.2, 1) 50ms;
+}
+</style><style data-jss="" data-meta="MuiOutlinedInput">
+.MuiOutlinedInput-root {
+  position: relative;
+  border-radius: 4px;
+}
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(0, 0, 0, 0.87);
+}
+@media (hover: none) {
+  .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(0, 0, 0, 0.23);
+  }
+}
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #5063f0;
+  border-width: 2px;
+}
+.MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+  border-color: #f44336;
+}
+.MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(0, 0, 0, 0.26);
+}
+.MuiOutlinedInput-colorSecondary.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(233, 30, 99, 1);
+}
+.MuiOutlinedInput-adornedStart {
+  padding-left: 14px;
+}
+.MuiOutlinedInput-adornedEnd {
+  padding-right: 14px;
+}
+.MuiOutlinedInput-multiline {
+  padding: 18.5px 14px;
+}
+.MuiOutlinedInput-multiline.MuiOutlinedInput-marginDense {
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+}
+.MuiOutlinedInput-notchedOutline {
+  border-color: rgba(0, 0, 0, 0.23);
+}
+.MuiOutlinedInput-input {
+  padding: 18.5px 14px;
+}
+.MuiOutlinedInput-input:-webkit-autofill {
+  border-radius: inherit;
+}
+.MuiOutlinedInput-inputMarginDense {
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+}
+.MuiOutlinedInput-inputMultiline {
+  padding: 0;
+}
+.MuiOutlinedInput-inputAdornedStart {
+  padding-left: 0;
+}
+.MuiOutlinedInput-inputAdornedEnd {
+  padding-right: 0;
+}
+</style><style data-jss="" data-meta="MuiFormLabel">
+.MuiFormLabel-root {
+  color: rgba(0, 0, 0, 0.54);
+  padding: 0;
+  font-size: 1rem;
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 1;
+}
+.MuiFormLabel-root.Mui-focused {
+  color: #5063f0;
+}
+.MuiFormLabel-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+.MuiFormLabel-root.Mui-error {
+  color: #f44336;
+}
+.MuiFormLabel-colorSecondary.Mui-focused {
+  color: rgba(233, 30, 99, 1);
+}
+.MuiFormLabel-asterisk.Mui-error {
+  color: #f44336;
+}
+</style><style data-jss="" data-meta="MuiInputLabel">
+.MuiInputLabel-root {
+  display: block;
+  transform-origin: top left;
+}
+.MuiInputLabel-formControl {
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform: translate(0, 24px) scale(1);
+}
+.MuiInputLabel-marginDense {
+  transform: translate(0, 21px) scale(1);
+}
+.MuiInputLabel-shrink {
+  transform: translate(0, 1.5px) scale(0.75);
+  transform-origin: top left;
+}
+.MuiInputLabel-animated {
+  transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+}
+.MuiInputLabel-filled {
+  z-index: 1;
+  transform: translate(12px, 20px) scale(1);
+  pointer-events: none;
+}
+.MuiInputLabel-filled.MuiInputLabel-marginDense {
+  transform: translate(12px, 17px) scale(1);
+}
+.MuiInputLabel-filled.MuiInputLabel-shrink {
+  transform: translate(12px, 10px) scale(0.75);
+}
+.MuiInputLabel-filled.MuiInputLabel-shrink.MuiInputLabel-marginDense {
+  transform: translate(12px, 7px) scale(0.75);
+}
+.MuiInputLabel-outlined {
+  z-index: 1;
+  transform: translate(14px, 20px) scale(1);
+  pointer-events: none;
+}
+.MuiInputLabel-outlined.MuiInputLabel-marginDense {
+  transform: translate(14px, 12px) scale(1);
+}
+.MuiInputLabel-outlined.MuiInputLabel-shrink {
+  transform: translate(14px, -6px) scale(0.75);
+}
+</style><style data-jss="" data-meta="MuiFormControl">
+.MuiFormControl-root {
+  border: 0;
+  margin: 0;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  min-width: 0;
+  flex-direction: column;
+  vertical-align: top;
+}
+.MuiFormControl-marginNormal {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+.MuiFormControl-marginDense {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+.MuiFormControl-fullWidth {
+  width: 100%;
+}
+</style><style data-jss="" data-meta="MuiPopover">
+.MuiPopover-paper {
+  outline: 0;
+  position: absolute;
+  max-width: calc(100% - 32px);
+  min-width: 16px;
+  max-height: calc(100% - 32px);
+  min-height: 16px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+</style><style data-jss="" data-meta="MuiMenu">
+.MuiMenu-paper {
+  max-height: calc(100% - 96px);
+  -webkit-overflow-scrolling: touch;
+}
+.MuiMenu-list {
+  outline: 0;
+}
+</style><style data-jss="" data-meta="MuiTextField">
+
+</style><style data-jss="" data-meta="MuiBox">
+
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiBox">
+</style><style data-jss="" data-meta="MuiAppBar">
+.MuiAppBar-root {
+  width: 100%;
+  display: flex;
+  z-index: 1200;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.MuiAppBar-positionFixed {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: fixed;
+}
+@media print {
+  .MuiAppBar-positionFixed {
+    position: absolute;
+  }
+}
+.MuiAppBar-positionAbsolute {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: absolute;
+}
+.MuiAppBar-positionSticky {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: sticky;
+}
+.MuiAppBar-positionStatic {
+  position: static;
+}
+.MuiAppBar-positionRelative {
+  position: relative;
+}
+.MuiAppBar-colorDefault {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #f5f5f5;
+}
+.MuiAppBar-colorPrimary {
+  color: #fff;
+  background-color: #5063f0;
+}
+.MuiAppBar-colorSecondary {
+  color: #fff;
+  background-color: rgba(233, 30, 99, 1);
+}
+.MuiAppBar-colorInherit {
+  color: inherit;
+}
+.MuiAppBar-colorTransparent {
+  color: inherit;
+  background-color: transparent;
+}
+</style><style data-jss="" data-meta="MuiDrawer">
+.MuiDrawer-docked {
+  flex: 0 0 auto;
+}
+.MuiDrawer-paper {
+  top: 0;
+  flex: 1 0 auto;
+  height: 100%;
+  display: flex;
+  outline: 0;
+  z-index: 1100;
+  position: fixed;
+  overflow-y: auto;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+}
+.MuiDrawer-paperAnchorLeft {
+  left: 0;
+  right: auto;
+}
+.MuiDrawer-paperAnchorRight {
+  left: auto;
+  right: 0;
+}
+.MuiDrawer-paperAnchorTop {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  height: auto;
+  max-height: 100%;
+}
+.MuiDrawer-paperAnchorBottom {
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  max-height: 100%;
+}
+.MuiDrawer-paperAnchorDockedLeft {
+  border-right: 1px solid #eeeeee;
+}
+.MuiDrawer-paperAnchorDockedTop {
+  border-bottom: 1px solid #eeeeee;
+}
+.MuiDrawer-paperAnchorDockedRight {
+  border-left: 1px solid #eeeeee;
+}
+.MuiDrawer-paperAnchorDockedBottom {
+  border-top: 1px solid #eeeeee;
+}
+</style><style data-jss="" data-meta="MuiToolbar">
+.MuiToolbar-root {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.MuiToolbar-gutters {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width:600px) {
+  .MuiToolbar-gutters {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+.MuiToolbar-regular {
+  min-height: 56px;
+}
+@media (min-width:0px) and (orientation: landscape) {
+  .MuiToolbar-regular {
+    min-height: 48px;
+  }
+}
+@media (min-width:600px) {
+  .MuiToolbar-regular {
+    min-height: 64px;
+  }
+}
+.MuiToolbar-dense {
+  min-height: 48px;
+}
+</style><style data-jss="" data-meta="MuiTooltip">
+.MuiTooltip-popper {
+  z-index: 1500;
+  pointer-events: none;
+}
+.MuiTooltip-popperInteractive {
+  pointer-events: auto;
+}
+.MuiTooltip-popperArrow[x-placement*="bottom"] .MuiTooltip-arrow {
+  top: 0;
+  left: 0;
+  margin-top: -0.71em;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.MuiTooltip-popperArrow[x-placement*="top"] .MuiTooltip-arrow {
+  left: 0;
+  bottom: 0;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: -0.71em;
+}
+.MuiTooltip-popperArrow[x-placement*="right"] .MuiTooltip-arrow {
+  left: 0;
+  width: 0.71em;
+  height: 1em;
+  margin-top: 4px;
+  margin-left: -0.71em;
+  margin-bottom: 4px;
+}
+.MuiTooltip-popperArrow[x-placement*="left"] .MuiTooltip-arrow {
+  right: 0;
+  width: 0.71em;
+  height: 1em;
+  margin-top: 4px;
+  margin-right: -0.71em;
+  margin-bottom: 4px;
+}
+.MuiTooltip-popperArrow[x-placement*="left"] .MuiTooltip-arrow::before {
+  transform-origin: 0 0;
+}
+.MuiTooltip-popperArrow[x-placement*="right"] .MuiTooltip-arrow::before {
+  transform-origin: 100% 100%;
+}
+.MuiTooltip-popperArrow[x-placement*="top"] .MuiTooltip-arrow::before {
+  transform-origin: 100% 0;
+}
+.MuiTooltip-popperArrow[x-placement*="bottom"] .MuiTooltip-arrow::before {
+  transform-origin: 0 100%;
+}
+.MuiTooltip-tooltip {
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 0.625rem;
+  max-width: 300px;
+  word-wrap: break-word;
+  font-family: Lato;
+  font-weight: 500;
+  line-height: 1.4em;
+  border-radius: 4px;
+  background-color: rgba(97, 97, 97, 0.9);
+}
+.MuiTooltip-tooltipArrow {
+  margin: 0;
+  position: relative;
+}
+.MuiTooltip-arrow {
+  color: rgba(97, 97, 97, 0.9);
+  width: 1em;
+  height: 0.71em;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+}
+.MuiTooltip-arrow::before {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  content: "";
+  display: block;
+  transform: rotate(45deg);
+  background-color: currentColor;
+}
+.MuiTooltip-touch {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.14286em;
+}
+.MuiTooltip-tooltipPlacementLeft {
+  margin: 0 24px ;
+  transform-origin: right center;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementLeft {
+    margin: 0 14px;
+  }
+}
+.MuiTooltip-tooltipPlacementRight {
+  margin: 0 24px;
+  transform-origin: left center;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementRight {
+    margin: 0 14px;
+  }
+}
+.MuiTooltip-tooltipPlacementTop {
+  margin: 24px 0;
+  transform-origin: center bottom;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementTop {
+    margin: 14px 0;
+  }
+}
+.MuiTooltip-tooltipPlacementBottom {
+  margin: 24px 0;
+  transform-origin: center top;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementBottom {
+    margin: 14px 0;
+  }
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss7 {
+  z-index: 1101;
+  border-bottom: 1px solid #d3d7da;
+}
+.jss8 {
+  background: #ffffff;
+}
+.jss9 {
+  border: 1px solid #c1c1c1;
+  cursor: pointer;
+}
+.jss10 {
+  flex-grow: 1;
+}
+.jss11 {
+  padding-top: 1px;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+.jss12 {
+  width: 180px;
+  cursor: pointer;
+  height: 27px;
+  background-size: auto;
+  background-image: url(https://res.cloudinary.com/onecompiler/image/upload/v1609016684/public/logo/v4-light_rvpjfq.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.jss13 {
+  width: 48px;
+  height: 48px;
+}
+.jss14 {
+  height: 40px;
+  font-size: 30px;;
+  margin-left: 18px;;
+  border-right: 1px solid #464748;
+  margin-right: 18px;;
+  padding-bottom: 10px;;
+}
+.jss15 {
+  margin-bottom: 30px;
+}
+@media (max-width:959.95px) {
+  .jss15 {
+    margin-bottom: 10px;
+  }
+}
+.jss16 {
+  color: rgba(0, 0, 0, 0.54);
+  margin-left: -8px;
+  margin-right: 8px;
+}
+.jss18 {
+  width: 250px;
+}
+.jss19 {
+  cursor: pointer;
+  padding-top: 4px;
+}
+.jss19:hover {
+  border-radius: 50%;
+  background-color: #ebecf1;
+}
+.jss20 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+</style><style data-jss="" data-meta="PrivateTabIndicator">
+.jss114 {
+  width: 100%;
+  bottom: 0;
+  height: 2px;
+  position: absolute;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.jss115 {
+  background-color: #5063f0;
+}
+.jss116 {
+  background-color: rgba(233, 30, 99, 1);
+}
+.jss117 {
+  right: 0;
+  width: 2px;
+  height: 100%;
+}
+</style><style data-jss="" data-meta="MuiTabs">
+.MuiTabs-root {
+  display: flex;
+  overflow: hidden;
+  min-height: 48px;
+  -webkit-overflow-scrolling: touch;
+}
+.MuiTabs-vertical {
+  flex-direction: column;
+}
+.MuiTabs-flexContainer {
+  display: flex;
+}
+.MuiTabs-flexContainerVertical {
+  flex-direction: column;
+}
+.MuiTabs-centered {
+  justify-content: center;
+}
+.MuiTabs-scroller {
+  flex: 1 1 auto;
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+}
+.MuiTabs-fixed {
+  width: 100%;
+  overflow-x: hidden;
+}
+.MuiTabs-scrollable {
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+.MuiTabs-scrollable::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width:599.95px) {
+  .MuiTabs-scrollButtonsDesktop {
+    display: none;
+  }
+}
+</style><style data-jss="" data-meta="MuiTab">
+.MuiTab-root {
+  padding: 6px 12px;
+  overflow: hidden;
+  position: relative;
+  font-size: 0.875rem;
+  max-width: 264px;
+  min-width: 72px;
+  box-sizing: border-box;
+  min-height: 48px;
+  text-align: center;
+  flex-shrink: 0;
+  font-family: Lato;
+  font-weight: 500;
+  line-height: 1.75;
+  white-space: normal;
+  text-transform: uppercase;
+}
+@media (min-width:600px) {
+  .MuiTab-root {
+    min-width: 160px;
+  }
+}
+.MuiTab-labelIcon {
+  min-height: 72px;
+  padding-top: 9px;
+}
+.MuiTab-labelIcon .MuiTab-wrapper > *:first-child {
+  margin-bottom: 6px;
+}
+.MuiTab-textColorInherit {
+  color: inherit;
+  opacity: 0.7;
+}
+.MuiTab-textColorInherit.Mui-selected {
+  opacity: 1;
+}
+.MuiTab-textColorInherit.Mui-disabled {
+  opacity: 0.5;
+}
+.MuiTab-textColorPrimary {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiTab-textColorPrimary.Mui-selected {
+  color: #5063f0;
+}
+.MuiTab-textColorPrimary.Mui-disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+.MuiTab-textColorSecondary {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiTab-textColorSecondary.Mui-selected {
+  color: rgba(233, 30, 99, 1);
+}
+.MuiTab-textColorSecondary.Mui-disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+.MuiTab-fullWidth {
+  flex-grow: 1;
+  max-width: none;
+  flex-basis: 0;
+  flex-shrink: 1;
+}
+.MuiTab-wrapped {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.MuiTab-wrapper {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss112 {
+  text-transform: none;
+}
+.jss112:hover {
+  color: #5063f0;
+  opacity: 1;
+}
+.jss112:hover .jss113 {
+  visibility: visible;
+}
+.jss113 {
+  visibility: hidden;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss123 {
+  flex-grow: 1;
+}
+.jss124 {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+}
+.jss124:hover {
+  background-color: #e0e0e0;
+}
+.jss125 {
+  display: flex;
+  margin-top: 16px;
+  align-items: center;
+  margin-right: 32px;
+  margin-bottom: 0;
+}
+.jss126 {
+  flex: 1;
+  margin-left: 24px;
+}
+.jss127 {
+  padding: 10px;
+}
+.jss128 {
+  display: flex;
+  align-items: center;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss129 {
+  padding: 10px;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss87 {
+  border-top: 1px solid #26de81 !important;
+}
+.jss88 {
+  border-top: 1px solid #f44336 !important;
+}
+.jss89 {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.jss90 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.jss91 {
+  width: 100%;
+}
+.jss92 {
+  text-align: right;
+}
+.jss93 {
+  float: right;
+  padding-top: 2px;
+  padding-right: 2px;
+}
+.jss94 {
+  color: #5063f0;
+  text-decoration: none;
+}
+.jss95 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.jss96 {
+  padding: 6px;
+}
+.jss97 {
+  margin: 0;
+  padding: 0px 0px 0px 42px;
+  background: white;
+}
+.jss98 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.jss99 {
+  border-color: #fff !important;
+  border-width: 1px;
+}
+.jss100 {
+  background: #f5f5f5;
+}
+.jss101 {
+  padding-top: 8px;
+}
+@media (min-width:600px) {
+  .jss102 {
+    border-left: 5px solid #f5f5f5;
+  }
+}
+.jss103 {
+  overflow: auto;
+  max-height: 345px;
+  padding-left: 8px;
+}
+.jss104 {
+  overflow: auto;
+  max-height: calc(100vh - 155px);
+  padding-left: 8px;
+}
+.jss105 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.jss106 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.jss107 {
+  height: 100%;
+}
+.jss108 {
+  height: calc(100vh - 60px);
+}
+.jss109 {
+  padding-bottom: 8px;
+}
+.jss110 {
+  height: calc(100vh - 50px);
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss1 {
+  flex-grow: 1;
+}
+@media (max-width:959.95px) {
+  .jss2 {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+.jss3 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.jss4 {
+  box-shadow: 0 2px 10px 0 rgba(23,70,161,.11);
+}
+.jss5 {
+  top: 300px;
+  left: 100%;
+  height: 25px;
+  padding: 1%;
+  position: fixed;
+  transform: rotate(90deg) translateX(-50%);
+  background: #f5f5f5;
+  transform-origin: 0% 0%;
+}
+.jss5:hover {
+  background: #e0e0e0;
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss84 {
+  position: relative;
+  flex-grow: 1;
+}
+.jss84:hover .jss85 {
+  visibility: visible;
+}
+.jss85 {
+  top: 6px;
+  color: #9e9e9e;
+  right: 4px;
+  cursor: pointer;
+  position: absolute;
+  visibility: hidden;
+}
+.jss85:hover {
+  color: #616161;
+}
+</style><script charset="utf-8" src="./C - OneCompiler - Write, run and share C code online_files/8a28b14e.9a4ce766b564310131cd.js.download"></script><script charset="utf-8" src="./C - OneCompiler - Write, run and share C code online_files/f9c623da2cf4a1c913f106d7a2ed21c0b7f412ef.481a4b28fb8bc37fb6d5.js.download"></script><script charset="utf-8" src="./C - OneCompiler - Write, run and share C code online_files/1c377de9871869784a9a644e97cd16155818224d.1d053724fccbd0d7051f.js.download"></script><script charset="utf-8" src="./C - OneCompiler - Write, run and share C code online_files/36.abc4711d4f18ed35b959.js.download"></script><script charset="utf-8" src="./C - OneCompiler - Write, run and share C code online_files/88.bf74304003b74e58e533.js.download"></script><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/0b7b90cd.aa72732e0783bba5c6be.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/372794fb2b9cbb2fdc65927d2b690cb19de4eff5.e844b0529942757375da.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/2252775a72d6f3c4aa7d084c7cd614f5f59f2e8d.96ed66d95c5813c81b9f.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/a52550472868d90742ea58218f60241e2cfcac29.57e3a8d45e8a3f6424a3.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/699ce786f02bc5f7ea097eb9b525545a2f398b6e.95a1d32f57c6f73d0bc8.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/a191e41b675a667b5da3408047e56c9de19310d5.d2f6278b89b37be5fc40.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/eb18c69b7bb35f6c60cc729e0261a956dac627d2.1f4cd810dc17f4d2f822.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/f3f48b4a51b25a052761d29dea0214a1c20af86c.835f27e1e86d3e900d56.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/7ea9e4e76cd1ae6ae0f4e9b41438aae99d5ea1e9.f907e4316ab299b30579.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/48a32005e0a090c6a21ccca766b7c91a789d5d7c.a1ff3ab71df82395cf95.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/d1c5dcc0bb63f124aea5d611e4e9d342e12907db.902106aebd6d75bcd8cd.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/3a8f64077cb30b3657b9e808edaf0421cc4f3680.4508afb0d3a3bda0ac42.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/8db4a9c0c4c72ed7e2af7f37ed6ed196fd917df5.1480c49ac244a49118a7.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/bf240ec8346ec7915119adf045cb55a20052cf37.2406191d145a6869f971.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/31.d3c74d9534ab8b2b2c65.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/index-e35451d293b522761a61.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/374be9c8023f7e42a501683007a11e70befca1c1.28f550708da1252b4b47.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/about-6c600553e466c777bb47.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/contact-931347b0c9a1059f59d7.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/19790f41f559b1486f4bd4417e70ebb40c7a70fd.643930d69d1357f74813.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/users-6f1f96ec4529baac1cdf.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/web-frameworks-ad0cfb50a78f13e95a26.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/cheatsheets-8c905e3f8aab7a9afa76.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/tutorials-9b4fa999dbc242eb6812.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/tools-0d526729769b8f144e4b.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/stats-a0db8e17ca9db0116c84.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/cheatsheet-1c9a67067df0f94e04e5.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/7d27868fcc2481b6cdb8d13a2127b6478eccf9ea.cea336809ee04cd052e9.js.download"><link as="script" rel="prefetch" href="./C - OneCompiler - Write, run and share C code online_files/privacy-policy-93c2e3c9940824f51005.js.download"><script id="_carbonads_projs" type="text/javascript" src="https://srv.carbonads.net/ads/CK7DL53L.json?segment=placement:onecompilercom&amp;callback=_carbonads_go"></script></head><body style=""><div id="__next"><header class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorInherit jss6 MuiPaper-elevation0"><div class="MuiToolbar-root MuiToolbar-dense jss17 MuiToolbar-gutters"><button class="MuiButtonBase-root MuiIconButton-root jss16 MuiIconButton-colorInherit MuiIconButton-edgeStart" tabindex="0" type="button" aria-label="Menu"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></span><span class="MuiTouchRipple-root"></span></button><a class="jss11" href="https://onecompiler.com/"> <div class="MuiBox-root jss21 jss12"></div> </a><span class="jss10"></span><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-label="search" title="Search"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span><span class="MuiTouchRipple-root"></span></button><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-label="dark mode" title="Toggle DarkMode"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zM12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6c3.31 0 6 2.69 6 6s-2.69 6-6 6z"></path></svg></span><span class="MuiTouchRipple-root"></span></button><a class="textDecorationNone" href="https://onecompiler.com/questions"> <button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary" tabindex="0" type="button"><span class="MuiButton-label">Q&amp;A</span><span class="MuiTouchRipple-root"></span></button> </a><a class="textDecorationNone" href="https://onecompiler.com/posts"> <button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary" tabindex="0" type="button"><span class="MuiButton-label">Posts</span><span class="MuiTouchRipple-root"></span></button> </a><a class="textDecorationNone" href="https://onecompiler.com/challenges"> <button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary" tabindex="0" type="button"><span class="MuiButton-label">Challenges</span><span class="MuiTouchRipple-root"></span></button> </a><button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary" tabindex="0" type="button" aria-haspopup="true"><span class="MuiButton-label">More</span><span class="MuiTouchRipple-root"></span></button><span class="jss14"></span><button class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" type="button"><span class="MuiButton-label">Login</span><span class="MuiTouchRipple-root"></span></button></div></header><hr class="MuiDivider-root"><div class="jss15"></div><main class="MuiContainer-root jss2 MuiContainer-maxWidthXl"><div class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-9"><div class="jss4"><div class="jss50"><div class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"><div class="MuiGrid-root MuiGrid-item"><div class="jss109"><div class="jss95"><h1 class="MuiTypography-root jss90 MuiTypography-h1 MuiTypography-colorPrimary" itemprop="headline">forking...&nbsp;</h1></div></div></div></div></div><div class="MuiPaper-root MuiPaper-outlined MuiPaper-rounded"><div class="jss48"><div class="MuiGrid-root jss100 MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"><div class="MuiGrid-root MuiGrid-item"> <div class="MuiBox-root jss111" style="display: flex; flex-direction: row;"><div class="MuiTabs-root"><div class="MuiTabs-scroller MuiTabs-fixed" style="overflow: hidden;"><div class="MuiTabs-flexContainer" role="tablist"><div class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary jss112 Mui-selected" tabindex="0" role="tab" aria-disabled="false" aria-selected="true"><span class="MuiTab-wrapper"><span>Main.c<span class="jss113"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall" tabindex="0" type="button" title="Rename" style="margin-left: 3px;"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg></span><span class="MuiTouchRipple-root"></span></button><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall" tabindex="0" type="button" title="Delete" style="margin-left: 3px;"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></span><span class="MuiTouchRipple-root"></span></button></span></span></span><span class="MuiTouchRipple-root"></span></div></div><span class="jss114 jss115 MuiTabs-indicator" style="left: 0px; width: 160px;"></span></div></div><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-label="more-options-add-file" aria-haspopup="true"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg></span><span class="MuiTouchRipple-root"></span></button></div> </div><div class="MuiGrid-root MuiGrid-item"><div class="jss95"><h1 class="MuiTypography-root jss90 MuiTypography-h1 MuiTypography-colorPrimary" itemprop="headline">forking...&nbsp;</h1></div></div><div class="MuiGrid-root MuiGrid-item"> <button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-textSizeSmall MuiButton-sizeSmall" tabindex="0" type="button" title="Create a new C program"><span class="MuiButton-label">New</span><span class="MuiTouchRipple-root"></span></button>&nbsp;&nbsp;&nbsp;<button class="MuiButtonBase-root MuiButton-root MuiButton-contained mr10 MuiButton-containedPrimary MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label">c <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path></svg></span><span class="MuiTouchRipple-root"></span></button><button class="MuiButtonBase-root MuiButton-root MuiButton-contained mr10 MuiButton-containedSecondary MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button" title="ctrl + enter"><span class="MuiButton-label">Run  <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span><span class="MuiTouchRipple-root"></span></button><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-label="more-options" aria-haspopup="true"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span><span class="MuiTouchRipple-root"></span></button><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-label="delete" title="Full Screen"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"></path></svg></span><span class="MuiTouchRipple-root"></span></button> </div></div></div><div class="jss50"><div class="MuiGrid-root jss100 jss101  MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"> <button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-textSizeSmall MuiButton-sizeSmall" tabindex="0" type="button" title="Create a new C program"><span class="MuiButton-label">New</span><span class="MuiTouchRipple-root"></span></button>&nbsp;&nbsp;&nbsp;<button class="MuiButtonBase-root MuiButton-root MuiButton-contained mr10 MuiButton-containedPrimary MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button" title="Click to change the language"><span class="MuiButton-label">c <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path></svg></span><span class="MuiTouchRipple-root"></span></button><button class="MuiButtonBase-root MuiButton-root MuiButton-contained mr10 MuiButton-containedSecondary MuiButton-containedSizeSmall MuiButton-sizeSmall" tabindex="0" type="button" title="ctrl + enter"><span class="MuiButton-label">Run  <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span><span class="MuiTouchRipple-root"></span></button><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-label="more-options" aria-haspopup="true"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span><span class="MuiTouchRipple-root"></span></button><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-label="delete" title="Full Screen"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"></path></svg></span><span class="MuiTouchRipple-root"></span></button></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"> <div class="MuiBox-root jss118" style="display: flex; flex-direction: row;"><div class="MuiTabs-root"><div class="MuiTabs-scroller MuiTabs-fixed" style="overflow: hidden;"><div class="MuiTabs-flexContainer" role="tablist"><div class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary jss112 Mui-selected" tabindex="0" role="tab" aria-disabled="false" aria-selected="true"><span class="MuiTab-wrapper"><span>Main.c<span class="jss113"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall" tabindex="0" type="button" title="Rename" style="margin-left: 3px;"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg></span><span class="MuiTouchRipple-root"></span></button><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall" tabindex="0" type="button" title="Delete" style="margin-left: 3px;"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></span><span class="MuiTouchRipple-root"></span></button></span></span></span><span class="MuiTouchRipple-root"></span></div></div><span class="jss114 jss115 MuiTabs-indicator" style="left: 0px; width: 0px;"></span></div></div><button class="MuiButtonBase-root MuiIconButton-root" tabindex="0" type="button" aria-label="more-options-add-file" aria-haspopup="true"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg></span><span class="MuiTouchRipple-root"></span></button></div>   </div></div></div><div class="MuiGrid-root MuiGrid-container"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-8"><div id="oc_ace" class=" ace_editor ace-github" style="width: 100%; height: 450px; font-size: 14px;"><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="opacity: 0; font-size: 1px; height: 1px; width: 1px; top: 0px; left: 0px;"></textarea><div class="ace_gutter" aria-hidden="true" style="left: 0px; width: 49px;"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="height: 1e+06px; top: 0px; left: 0px; width: 49px;"><div class="ace_gutter-cell " style="height: 16px; top: 0px;">1<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 16px;">2<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 32px;">3<span style="display: none; height: 16px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 48px;">4<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 64px;">5<span style="display: none; height: 16px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 80px;">6<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 96px;">7<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 112px;">8<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 128px;">9<span style="display: none; height: 16px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 144px;">10<span style="display: none; height: 16px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 160px;">11<span style="display: none; height: 16px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 176px;">12<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 16px;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 192px;">13<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 208px;">14<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 224px;">15<span style="display: inline-block; height: 16px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 240px;">16<span class="ace_fold-widget ace_start ace_open" style="height: 16px; display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 256px;">17<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 272px;">18<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 288px;">19<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 304px;">20<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 320px;">21<span style="display: none; height: 16px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 336px;">22<span class="ace_fold-widget ace_start ace_open" style="height: 16px; display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 352px;">23<span style="display: none; height: 16px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 368px;">24<span style="display: none; height: 16px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 384px;">25<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 400px;">26<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 416px;">27<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 432px;">28<span style="display: none; height: 16px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 448px;">29<span style="display: none; height: 16px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 464px;">30<span style="display: none; height: 16px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 16px; top: 480px;">31<span style="display: none;"></span></div></div></div><div class="ace_scroller" style="line-height: 16px; left: 48.3984px; right: 17px; bottom: 0px;"><div class="ace_content" style="top: 0px; left: 0px; width: 693px; height: 465px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 620px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_text-layer" style="height: 1e+06px; margin: 0px 4px; top: 0px; left: 0px;"><div class="ace_line" style="height: 16px; top: 0px;"><span class="ace_comment">// C program to illustrate OpenGL game</span></div><div class="ace_line" style="height: 16px; top: 16px;"><span class="ace_keyword">#include</span><span class="ace_constant ace_other">&lt;stdio.h&gt;</span></div><div class="ace_line" style="height: 16px; top: 32px;"><span class="ace_keyword">#include</span><span class="ace_constant ace_other">&lt;GL/glut.h&gt;</span></div><div class="ace_line" style="height: 16px; top: 48px;"><span class="ace_keyword">#include</span><span class="ace_constant ace_other">&lt;math.h&gt;</span></div><div class="ace_line" style="height: 16px; top: 64px;"><span class="ace_keyword">#define</span><span class="ace_constant ace_other"> pi 3.142857</span></div><div class="ace_line" style="height: 16px; top: 80px;"></div><div class="ace_line" style="height: 16px; top: 96px;"><span class="ace_comment">// Global Declaration</span></div><div class="ace_line" style="height: 16px; top: 112px;"><span class="ace_comment">// c and d tracks the number of time 'b' and 'n' pressed respectively</span></div><div class="ace_line" style="height: 16px; top: 128px;"><span class="ace_comment">// left and right indicates leftmost and rightmost index of movable rectangle</span></div><div class="ace_line" style="height: 16px; top: 144px;"><span class="ace_storage ace_type">int</span> <span class="ace_identifier">c</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_identifier">d</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_identifier">left</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_identifier">right</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 16px; top: 160px;"><span class="ace_storage ace_type">int</span> <span class="ace_identifier">m</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_identifier">j</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_identifier">flag1</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_identifier">l</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_identifier">flag2</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_identifier">n</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_identifier">score</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_identifier">count</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 16px; top: 176px;"></div><div class="ace_line" style="height: 16px; top: 192px;"><span class="ace_comment">// Initialization function</span></div><div class="ace_line" style="height: 16px; top: 208px;"><span class="ace_storage ace_type">void</span> <span class="ace_identifier">myInit</span> <span class="ace_paren ace_lparen">(</span><span class="ace_storage ace_type">void</span><span class="ace_paren ace_rparen">)</span></div><div class="ace_line" style="height: 16px; top: 224px;"><span class="ace_paren ace_lparen">{</span></div><div class="ace_line" style="height: 16px; top: 240px;">  <span class="ace_comment">// Reset background color with white (since all three argument is 1.0)</span></div><div class="ace_line" style="height: 16px; top: 256px;">  <span class="ace_identifier">glClearColor</span><span class="ace_paren ace_lparen">(</span><span class="ace_constant ace_numeric">1.0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_constant ace_numeric">1.0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_constant ace_numeric">1.0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_constant ace_numeric">0.0</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 16px; top: 272px;"></div><div class="ace_line" style="height: 16px; top: 288px;">  <span class="ace_comment">// Set picture color to red (in RGB model)</span></div><div class="ace_line" style="height: 16px; top: 304px;">  <span class="ace_comment">// as only argument corresponding to R (Red) is 1.0 and rest are 0.0</span></div><div class="ace_line" style="height: 16px; top: 320px;">  <span class="ace_identifier">glColor3f</span><span class="ace_paren ace_lparen">(</span><span class="ace_constant ace_numeric">1.0f</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_constant ace_numeric">0.0f</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_constant ace_numeric">0.0f</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 16px; top: 336px;"></div><div class="ace_line" style="height: 16px; top: 352px;">  <span class="ace_comment">// Set width of point to one unit</span></div><div class="ace_line" style="height: 16px; top: 368px;">  <span class="ace_identifier">glPointSize</span><span class="ace_paren ace_lparen">(</span><span class="ace_constant ace_numeric">1.0</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 16px; top: 384px;">  <span class="ace_identifier">glMatrixMode</span><span class="ace_paren ace_lparen">(</span><span class="ace_identifier">GL_PROJECTION</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 16px; top: 400px;">  <span class="ace_identifier">glLoadIdentity</span><span class="ace_paren ace_lparen">(</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">;</span></div><div class="ace_line" style="height: 16px; top: 416px;"></div><div class="ace_line" style="height: 16px; top: 432px;">  <span class="ace_comment">// Set window size in X- and Y- direction</span></div><div class="ace_line" style="height: 16px; top: 448px;">  <span class="ace_identifier">gluOrtho2D</span><span class="ace_paren ace_lparen">(</span><span class="ace_constant ace_numeric">-620.0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_constant ace_numeric">620.0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_constant ace_numeric">-340.0</span><span class="ace_punctuation ace_operator">,</span> <span class="ace_constant ace_numeric">340.0</span><span class="ace_paren ace_rparen">)</span><span class="ace_punctuation ace_operator">;</span></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="display: block; top: 2832px; left: 4px; width: 8px; height: 16px; animation-duration: 1000ms;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="width: 22px; bottom: 17px;"><div class="ace_scrollbar-inner" style="width: 22px; height: 2848px;">&nbsp;</div></div><div class="ace_scrollbar ace_scrollbar-h" style="height: 22px; left: 48.3984px; right: 17px;"><div class="ace_scrollbar-inner" style="height: 22px; width: 693px;">&nbsp;</div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;">הההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההה</div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></div></div><div class="MuiGrid-root jss102 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4"><div class="jss107"><div class="jss105"><div class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal MuiFormControl-fullWidth" style="padding-bottom: 2px;"><label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined" data-shrink="true">STDIN</label><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-multiline MuiOutlinedInput-multiline" style="padding-bottom: 2px;"><textarea rows="3" aria-invalid="false" placeholder="Input for the program ( Optional )" class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMultiline MuiOutlinedInput-inputMultiline" style="height: 57px;"></textarea><textarea aria-hidden="true" class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMultiline MuiOutlinedInput-inputMultiline" readonly="" tabindex="-1" style="visibility: hidden; position: absolute; overflow: hidden; height: 0px; top: 0px; left: 0px; transform: translateZ(0px); width: 334.462px;"></textarea><fieldset aria-hidden="true" class="jss119 MuiOutlinedInput-notchedOutline jss99"><legend class="jss121 jss122"><span>STDIN</span></legend></fieldset></div></div></div><div class="  jss103   
+                             
+                           jss88  "><p>Output:</p><div><pre>Main.c:3:9: fatal error: GL/glut.h: No such file or directory
+    3 | #include&lt;GL/glut.h&gt;
+      |         ^~~~~~~~~~~
+compilation terminated.</pre></div></div></div></div></div><div></div></div></div><div class="oc-theme-light"><span id="_carbonads_js_slot" class="inline-add"><script async="" id="_carbonads_js" src="./C - OneCompiler - Write, run and share C code online_files/carbon.js.download"></script><div id="carbonads"><span><span class="carbon-wrap"><a href="https://srv.carbonads.net/ads/click/x/GTND42JYCYADK53LCVSLYKQNFTSDLKJ7F6YI6Z3JCYADKK7ICEAITK3KCASDLK7LF67D553MCVYIEK37CK7I42JKC6SDE2JYF6YIKK3EHJNCLSIZ?segment=placement:onecompilercom;" class="carbon-img" target="_blank" rel="noopener sponsored"><img src="./C - OneCompiler - Write, run and share C code online_files/1670532337-Stock2.jpg" alt="ads via Carbon" border="0" height="100" width="130" style="max-width: 130px;"></a><a href="https://srv.carbonads.net/ads/click/x/GTND42JYCYADK53LCVSLYKQNFTSDLKJ7F6YI6Z3JCYADKK7ICEAITK3KCASDLK7LF67D553MCVYIEK37CK7I42JKC6SDE2JYF6YIKK3EHJNCLSIZ?segment=placement:onecompilercom;" class="carbon-text" target="_blank" rel="noopener sponsored">Get 10 Free Images From Adobe Stock. Start Now.</a></span><a href="http://carbonads.net/?utm_source=onecompilercom&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=carbon" class="carbon-poweredby" target="_blank" rel="noopener sponsored">ads via Carbon</a></span></div></span><div class="md-view  oc-theme-light "><h1>C Language online compiler</h1><p>Write, Run &amp; Share C Language code online using OneCompiler's C online compiler for free. It's one of the robust, feature-rich online compilers for C language, running the latest C version which is C18. Getting started with the OneCompiler's C editor is really simple and pretty fast. The editor shows sample boilerplate code when you choose language as 'C' and start coding!</p><h1>Read inputs from stdin</h1><p>OneCompiler's C online editor supports stdin and users can give inputs to programs using the STDIN textbox under the I/O tab. Following is a sample C program which takes name as input and print your name with hello.</p><pre class="jss84"><svg class="MuiSvgIcon-root jss85 MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4l6 6v10c0 1.1-.9 2-2 2H7.99C6.89 23 6 22.1 6 21l.01-14c0-1.1.89-2 1.99-2h7zm-1 7h5.5L14 6.5V12z"></path></svg><code class="language-c hljs c"><span class="hljs-meta"><span class="hljs-meta"><span class="hljs-meta">#</span></span><span class="hljs-meta-keyword"><span class="hljs-meta"><span class="hljs-meta-keyword"><span class="hljs-meta"><span class="hljs-meta-keyword">include</span></span></span></span></span><span class="hljs-meta"><span class="hljs-meta"> </span></span><span class="hljs-meta-string"><span class="hljs-meta"><span class="hljs-meta-string"><span class="hljs-meta"><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span></span></span></span>
+<span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">int</span></span></span></span></span><span class="hljs-function"><span class="hljs-function"> </span></span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">main</span></span></span></span></span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">()</span></span></span></span></span><span class="hljs-function"><span class="hljs-function">
+</span></span></span>{
+    <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">char</span></span></span> name[<span class="hljs-number"><span class="hljs-number"><span class="hljs-number">50</span></span></span>];
+    <span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">printf</span></span></span>(<span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"Enter name:"</span></span></span>);
+    <span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">scanf</span></span></span>(<span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"%s"</span></span></span>, &amp;name);
+    <span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">printf</span></span></span>(<span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"Hello %s"</span></span></span> , name );
+    <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">return</span></span></span> <span class="hljs-number"><span class="hljs-number"><span class="hljs-number">0</span></span></span>;
+    
+}</code></pre><h1>About C</h1><p>C language is one of the most popular general-purpose programming language developed by Dennis Ritchie at Bell laboratories for UNIX operating system. The initial release of C Language was in the year 1972. Most of the desktop operating systems are written in C Language.</p><h3>Key features:</h3><ul><li>Structured Programming</li><li>Popular system programming language</li><li>UNIX, MySQL and Oracle are completely written in C.</li><li>Supports variety of platforms</li><li>Efficient and also handle low-level activities.</li><li>As fast as assembly language and hence used as system development language.</li></ul><h1>Syntax help</h1><h2>Loops</h2><h3>1. If-Else:</h3><p>When ever you want to perform a set of operations based on a condition <code>if-else</code> is used.</p><pre class="jss84"><svg class="MuiSvgIcon-root jss85 MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4l6 6v10c0 1.1-.9 2-2 2H7.99C6.89 23 6 22.1 6 21l.01-14c0-1.1.89-2 1.99-2h7zm-1 7h5.5L14 6.5V12z"></path></svg><code class="language-c hljs c"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">if</span></span></span>(conditional-expression) {
+   <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// code</span></span></span>
+} <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">else</span></span></span> {
+   <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// code</span></span></span>
+}</code></pre><p>You can also use if-else for nested Ifs and if-else-if ladder when multiple conditions are to be performed on a single variable.</p><h3>2. Switch:</h3><p>Switch is an alternative to if-else-if ladder.</p><pre class="jss84"><svg class="MuiSvgIcon-root jss85 MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4l6 6v10c0 1.1-.9 2-2 2H7.99C6.89 23 6 22.1 6 21l.01-14c0-1.1.89-2 1.99-2h7zm-1 7h5.5L14 6.5V12z"></path></svg><code class="language-c hljs c"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">switch</span></span></span>(conditional-expression) {    
+<span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">case</span></span></span> value1:    
+ <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// code    </span></span></span>
+ <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">break</span></span></span>;  <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// optional  </span></span></span>
+<span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">case</span></span></span> value2:    
+ <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// code    </span></span></span>
+ <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">break</span></span></span>;  <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// optional  </span></span></span>
+...    
+    
+<span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">default</span></span></span>:     
+ <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// code to be executed when all the above cases are not matched;    </span></span></span>
+} </code></pre><h3>3. For:</h3><p>For loop is used to iterate a set of statements based on a condition.</p><pre class="jss84"><svg class="MuiSvgIcon-root jss85 MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4l6 6v10c0 1.1-.9 2-2 2H7.99C6.89 23 6 22.1 6 21l.01-14c0-1.1.89-2 1.99-2h7zm-1 7h5.5L14 6.5V12z"></path></svg><code class="language-c hljs c"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">for</span></span></span>(Initialization; Condition; Increment/decrement){  
+  <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// code  </span></span></span>
+} </code></pre><h3>4. While:</h3><p>While is also used to iterate a set of statements based on a condition. Usually while is preferred when number of iterations are not known in advance.</p><pre class="jss84"><svg class="MuiSvgIcon-root jss85 MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4l6 6v10c0 1.1-.9 2-2 2H7.99C6.89 23 6 22.1 6 21l.01-14c0-1.1.89-2 1.99-2h7zm-1 7h5.5L14 6.5V12z"></path></svg><code class="language-c hljs c"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">while</span></span></span>(condition) {  
+ <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// code </span></span></span>
+}  </code></pre><h3>5. Do-While:</h3><p>Do-while is also used to iterate a set of statements based on a condition. It is mostly used when you need to execute the statements atleast once.</p><pre class="jss84"><svg class="MuiSvgIcon-root jss85 MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4l6 6v10c0 1.1-.9 2-2 2H7.99C6.89 23 6 22.1 6 21l.01-14c0-1.1.89-2 1.99-2h7zm-1 7h5.5L14 6.5V12z"></path></svg><code class="language-c hljs c"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">do</span></span></span> {
+  <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// code </span></span></span>
+} <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">while</span></span></span> (condition); </code></pre><h2>Arrays</h2><p>Array is a collection of similar data which is stored in continuous memory addresses. Array values can be fetched using index.  Index starts from 0 to size-1.</p><h3>Syntax</h3><h3>One dimentional Array:</h3><pre class="jss84"><svg class="MuiSvgIcon-root jss85 MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4l6 6v10c0 1.1-.9 2-2 2H7.99C6.89 23 6 22.1 6 21l.01-14c0-1.1.89-2 1.99-2h7zm-1 7h5.5L14 6.5V12z"></path></svg><code class="language-c hljs c">data-type <span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">array</span></span></span>-name[size];</code></pre><h3>Two dimensional array:</h3><pre class="jss84"><svg class="MuiSvgIcon-root jss85 MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4l6 6v10c0 1.1-.9 2-2 2H7.99C6.89 23 6 22.1 6 21l.01-14c0-1.1.89-2 1.99-2h7zm-1 7h5.5L14 6.5V12z"></path></svg><code class="language-c hljs c">data-type <span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">array</span></span></span>-name[size][size];</code></pre><h2>Functions</h2><p>Function is a sub-routine which contains set of statements. Usually functions are written when multiple calls are required to same set of statements which increases re-usuability and modularity.</p><p>Two types of functions are present in C</p><ol><li>Library Functions:</li></ol><p>Library functions are the in-built functions which are declared in header files like printf(),scanf(),puts(),gets() etc.,</p><ol start="2"><li>User defined functions:</li></ol><p>User defined functions are the ones which are written by the programmer based on the requirement.</p><h2>How to declare a Function</h2><pre class="jss84"><svg class="MuiSvgIcon-root jss85 MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4l6 6v10c0 1.1-.9 2-2 2H7.99C6.89 23 6 22.1 6 21l.01-14c0-1.1.89-2 1.99-2h7zm-1 7h5.5L14 6.5V12z"></path></svg><code class="language-c hljs c"><span class="hljs-function"><span class="hljs-function"><span class="hljs-function">return_type </span></span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">function_name</span></span></span></span></span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">(parameters)</span></span></span></span></span></span>;</code></pre><h2>How to call a Function</h2><pre class="jss84"><svg class="MuiSvgIcon-root jss85 MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4l6 6v10c0 1.1-.9 2-2 2H7.99C6.89 23 6 22.1 6 21l.01-14c0-1.1.89-2 1.99-2h7zm-1 7h5.5L14 6.5V12z"></path></svg><code class="language-c hljs c">function_name (parameters)</code></pre><h2>How to define a Function</h2><pre class="jss84"><svg class="MuiSvgIcon-root jss85 MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm-1 4l6 6v10c0 1.1-.9 2-2 2H7.99C6.89 23 6 22.1 6 21l.01-14c0-1.1.89-2 1.99-2h7zm-1 7h5.5L14 6.5V12z"></path></svg><code class="language-c hljs c"><span class="hljs-function"><span class="hljs-function"><span class="hljs-function">return_type </span></span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">function_name</span></span></span></span></span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">(parameters)</span></span></span></span></span><span class="hljs-function"><span class="hljs-function"> </span></span></span>{  
+  <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">//code</span></span></span>
+}</code></pre></div></div></div></div></main><hr class="MuiDivider-root"><div class="jss51"><button class="MuiButtonBase-root MuiButton-root MuiButton-text jss5 MuiButton-textSizeSmall MuiButton-sizeSmall" tabindex="0" type="button"><span class="MuiButton-label"><p class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"> Feedback </p></span><span class="MuiTouchRipple-root"></span></button></div><div class="MuiGrid-root jss80 MuiGrid-container"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"> </div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10"><div class="MuiGrid-root MuiGrid-container"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10 MuiGrid-grid-md-3 MuiGrid-grid-lg-3"><h6 class="MuiTypography-root footerText MuiTypography-h6 MuiTypography-gutterBottom">OneCompiler.com</h6><br><a class="jss81" href="https://onecompiler.com/about"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> About</p></a><a class="jss81" href="https://onecompiler.com/contact"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Contact</p></a><br><a class="jss81" href="https://onecompiler.com/users"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Users</p></a><a class="jss81" href="https://status.onecompiler.com/" target="_blank"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Status</p></a><a class="jss81" href="https://github.com/sponsors/onecompiler" target="_blank"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Sponsor</p></a><br><a class="jss81" href="https://github.com/onecompiler" target="_blank"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> GitHub </p></a><a class="jss81" href="https://www.linkedin.com/company/onecompiler" target="_blank"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> LinkedIn </p></a><a class="jss81" href="https://www.facebook.com/onecompiler" target="_blank"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Facebook </p></a><a class="jss81" href="https://www.instagram.com/onecompiler" target="_blank"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Instagram </p></a><a class="jss81" href="https://twitter.com/one_compiler" target="_blank"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Twitter </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10 MuiGrid-grid-md-3 MuiGrid-grid-lg-6"><h6 class="MuiTypography-root footerText MuiTypography-h6 MuiTypography-gutterBottom">Languages</h6><br><div class="MuiGrid-root MuiGrid-container"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/java"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Java </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/python"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Python </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/c"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> C </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/cpp"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> C++ </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/nodejs"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> NodeJS </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/javascript"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> JavaScript </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/groovy"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Groovy </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/jshell"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> JShell </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/haskell"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Haskell </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/tcl"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Tcl </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/lua"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Lua </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/ada"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Ada </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/commonlisp"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> CommonLisp </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/d"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> D </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/elixir"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Elixir </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/erlang"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Erlang </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/fsharp"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> F# </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/fortran"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Fortran </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/assembly"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Assembly </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/scala"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Scala </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/php"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> PHP </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/python2"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Python2 </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/csharp"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> C# </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/perl"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Perl </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/ruby"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Ruby </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/go"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Go </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/r"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> R </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/racket"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Racket </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/ocaml"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> OCaml </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/vb"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Visual Basic (VB.NET) </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/html"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> HTML </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/materialize"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Materialize </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/bootstrap"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Bootstrap </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/jquery"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> JQuery </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/foundation"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Foundation </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/bulma"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Bulma </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/uikit"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Uikit </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/semanticUI"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Semantic UI </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/skeleton"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Skeleton </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/milligram"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Milligram </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/paperCss"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> PaperCSS </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/backbonejs"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> BackboneJS </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/react"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> React (Beta) </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/angular"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Angular (Beta) </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/vue"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Vue (Beta) </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/vue3"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Vue3 (Beta) </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/bash"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Bash </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/clojure"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Clojure </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/typescript"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> TypeScript </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/cobol"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Cobol </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/kotlin"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Kotlin </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/pascal"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Pascal </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/prolog"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Prolog </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/rust"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Rust </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/swift"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Swift </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/octave"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Octave </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/text"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Text </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/brainfk"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> BrainFK </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/coffeescript"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> CoffeeScript </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/ejs"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> EJS </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/mysql"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> MySQL </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/postgresql"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> PostgreSQL </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/mongodb"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> MongoDB </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/sqlite"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> SQLite </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/redis"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Redis </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/mariadb"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> MariaDB </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/cassandra"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Cassandra </p></a></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"><a class="jss81" href="https://onecompiler.com/sqlserver"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Microsoft SQL Server </p></a></div></div></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10 MuiGrid-grid-md-3 MuiGrid-grid-lg-3"><h6 class="MuiTypography-root footerText MuiTypography-h6 MuiTypography-gutterBottom">More</h6><br><a class="jss81" href="https://onecompiler.com/cheatsheets"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Cheatsheets</p></a><a class="jss81" href="https://onecompiler.com/tutorials"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Tutorials</p></a><a class="jss81" href="https://onecompiler.com/tools"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Tools</p></a><a class="jss81" href="https://onecompiler.com/stats"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> Stats</p></a><a class="jss81" href="https://onecompiler.com/cheatsheets/onecompiler-apis"><p class="MuiTypography-root footerLink MuiTypography-body2 MuiTypography-noWrap MuiTypography-gutterBottom"> API </p></a></div></div></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"> </div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"><br><br><p class="MuiTypography-root jss82 MuiTypography-body1 MuiTypography-noWrap MuiTypography-gutterBottom">© Copyright 2023 One Compiler Pvt. Ltd. |<a class="jss81" href="https://onecompiler.com/privacy-policy"><span class="footerLink"> Privacy Policy </span></a>|<a href="https://onecompiler.com/terms-and-conditions" class="jss81"><span class="footerLink"> Terms &amp; Conditions </span></a></p></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1"> </div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"pathname":"/","query":{"language":"cpp","id":"3xmh2byyd"},"codeObj":{"_id":"3xmh2byyd","type":"code","created":"2021-12-16T10:04:27.526Z","updated":"2021-12-16T10:06:48.060Z","title":"opengl","description":null,"tags":[],"visibility":"public","properties":{"language":"cpp","files":[{"name":"HelloWorld.cpp","content":"#include\u003ciostream\u003e\n#include \u003cGL/glut.h\u003e \n#include\u003cmath.h\u003e\nusing namespace std;\nvoid myinit()\n{\n    glClearColor(1.0,1.0,1.0,0.0);\n    glColor3f(0.0f,0.0f,0.0f);\n    gluOrtho2D(0,640,0,480); \n    //glPointSize(4);\n}\nvoid line(int x1,int y1,int x2,int y2)\n{\n    glBegin(GL_LINES);\n        glVertex2i(x1,y1);\n        glVertex2i(x2,y2);\n        glEnd();\n        glFlush();\n} \nvoid koch(int x1, int y1, int x2, int y2, int it)\n{\n    float angle = 60*M_PI/180; \n    int x3 = (2*x1+x2)/3;\n    int y3 = (2*y1+y2)/3;\n    int x4 = (x1+2*x2)/3;\n    int y4 = (y1+2*y2)/3;\n    int x = x3 + (x4-x3)*cos(angle)+(y4-y3)*sin(angle); \n    int y = y3 - (x4-x3)*sin(angle)+(y4-y3)*cos(angle);\n    if(it \u003e 0)\n    { \n        koch(x1, y1, x3, y3, it-1);\n        koch(x3, y3, x, y, it-1);\n        koch(x, y, x4, y4, it-1);\n        koch(x4, y4, x2, y2, it-1);\n    } \n    else\n    {\n        line(x1, y1, x3, y3);\n        line(x3, y3, x, y);\n        line(x, y, x4, y4); \n        line(x4, y4, x2, y2);\n    }   \n}\nvoid mydisplay()\n{\n    glClear(GL_COLOR_BUFFER_BIT); \n    int x1 = 100, y1 = 100, x2 = 400, y2 = 400;\n    koch(x1, y1, x2, y2, 4);\n}\nint main(int argc, char** argv)\n{\n    glutInit(\u0026argc,argv); // Initialize GLUT \n    glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB); // Enable buffered mode\n    glutInitWindowSize(640,480); // Set the window's initial width \u0026 height\n    glutInitWindowPosition(0,0);\n        // Position the window's initial top-left corner\n    glutCreateWindow(\"Koch Curve Snowflake \");\n        // Create window with the given title\n    glutDisplayFunc(mydisplay); // Register callback handler for window re-paint event\n    myinit();\n    glutMainLoop(); // Enter the infinite event-processing loop glutMainLoop();\n}\n"}],"stdin":null,"hash":"c11916cc4b7f6362e3585734f3e6a5d5dda76418","result":{"stdout":"","stderr":"HelloWorld.cpp:2:10: fatal error: GL/glut.h: No such file or directory\n    2 | #include \u003cGL/glut.h\u003e\n      |          ^~~~~~~~~~~\ncompilation terminated.\n","exception":"Error: Command failed: timeout 7 g++ -o HelloWorld HelloWorld.cpp\nHelloWorld.cpp:2:10: fatal error: GL/glut.h: No such file or directory\n    2 | #include \u003cGL/glut.h\u003e\n      |          ^~~~~~~~~~~\ncompilation terminated.\n","executionTime":55,"success":false,"output":"HelloWorld.cpp:2:10: fatal error: GL/glut.h: No such file or directory\n    2 | #include \u003cGL/glut.h\u003e\n      |          ^~~~~~~~~~~\ncompilation terminated."}},"user":{"_id":null},"metrics":{"views":34024}},"language":"cpp","timestamp":"1686891836005_300","doc":"# C++ Online Compiler\n\nWrite, Run \u0026 Share C++ code online using OneCompiler's C++ online compiler for free. It's one of the robust, feature-rich online compilers for C++ language, running on the latest version 17. Getting started with the OneCompiler's C++ compiler is simple and pretty fast. The editor shows sample boilerplate code  when you choose language as `C++` and start coding!\n\n# Read inputs from stdin\nOneCompiler's C++ online compiler supports stdin and users can give inputs to programs using the STDIN textbox under the I/O tab. Following is a sample program which takes name as input and print your name with hello.\n\n```c\n#include \u003ciostream\u003e\n#include \u003cstring\u003e\nusing namespace std;\n\nint main() \n{\n    string name;\n    cout \u003c\u003c \"Enter name:\";\n    getline (cin, name);\n    cout \u003c\u003c \"Hello \" \u003c\u003c name;\n    return 0;\n}\n```\n\n# About C++\nC++ is a widely used middle-level programming language. \n\n* Supports different platforms like Windows, various Linux flavours, MacOS etc\n* C++ supports OOPS concepts like Inheritance, Polymorphism, Encapsulation and Abstraction.\n* Case-sensitive\n* C++ is a compiler based language\n* C++ supports structured programming language \n* C++ provides alot of inbuilt functions and also supports dynamic memory allocation.\n* Like C, C++ also allows you to play with memory using Pointers.\n\n# Syntax help\n\n## Loops\n### 1. If-Else:\n\nWhen ever you want to perform a set of operations based on a condition If-Else is used.\n\n```c\nif(conditional-expression) {\n   //code\n}\nelse {\n   //code\n}\n```\nYou can also use if-else for nested Ifs and If-Else-If ladder when multiple conditions are to be performed on a single variable.\n\n### 2. Switch:\n\nSwitch is an alternative to If-Else-If ladder.\n\n```c\nswitch(conditional-expression){    \ncase value1:    \n // code    \n break;  // optional  \ncase value2:    \n // code    \n break;  // optional  \n......    \n    \ndefault:     \n code to be executed when all the above cases are not matched;    \n} \n```\n\n### 3. For:\n\nFor loop is used to iterate a set of statements based on a condition.\n\n```c\nfor(Initialization; Condition; Increment/decrement){  \n  //code  \n} \n```\n\n### 4. While:\n\nWhile is also used to iterate a set of statements based on a condition. Usually while is preferred when number of iterations are not known in advance.\n\n```c\nwhile (condition) {  \n// code \n}  \n```\n\n### 5. Do-While:\nDo-while is also used to iterate a set of statements based on a condition. It is mostly used when you need to execute the statements atleast once.\n\n```c\ndo {  \n // code \n} while (condition); \n```\n\n## Functions\n\nFunction is a sub-routine which contains set of statements. Usually functions are written when multiple calls are required to same set of statements which increases re-usuability and modularity. Function gets run only when it is called.\n\n### How to declare a Function:\n\n```c\nreturn_type function_name(parameters);\n```\n\n### How to call a Function:\n\n```c\nfunction_name (parameters)\n```\n### How to define a Function:\n```c\nreturn_type function_name(parameters) {  \n // code\n}\n```\n\n"}},"page":"/","query":{"language":"cpp","id":"3xmh2byyd"},"buildId":"d366f13342bb5669db3d50365c94bec07a0eed6b","isFallback":false,"customServer":true,"gip":true}</script><script nomodule="" src="./C - OneCompiler - Write, run and share C code online_files/polyfills-0e8872e19bddab69cb01.js.download"></script><script src="./C - OneCompiler - Write, run and share C code online_files/main-f008a33faf30dda9014f.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/webpack-fdac3483aca3157d8624.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/framework.f459cfe0be1f959afc11.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/4cc32b01a4c91be6cab161ff1195ed8f2ee1dd1f.5c0b1164ef694e50b250.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/353bf654caf2a10e8fc4a1c7755682b3533fea75.6943ddaaa52c80462666.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/a7c2b880a1e4eafcc3e5e1757b01afba2513dc47.74346571a21aee890254.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/9f8d413d6a070e2a7df4c5511317375762151af6.24613109132ce743f8c9.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/_app-a2326b4f5f15a158ea15.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/0b7b90cd.aa72732e0783bba5c6be.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/372794fb2b9cbb2fdc65927d2b690cb19de4eff5.e844b0529942757375da.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/2252775a72d6f3c4aa7d084c7cd614f5f59f2e8d.96ed66d95c5813c81b9f.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/a52550472868d90742ea58218f60241e2cfcac29.57e3a8d45e8a3f6424a3.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/699ce786f02bc5f7ea097eb9b525545a2f398b6e.95a1d32f57c6f73d0bc8.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/a191e41b675a667b5da3408047e56c9de19310d5.d2f6278b89b37be5fc40.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/eb18c69b7bb35f6c60cc729e0261a956dac627d2.1f4cd810dc17f4d2f822.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/f3f48b4a51b25a052761d29dea0214a1c20af86c.835f27e1e86d3e900d56.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/7ea9e4e76cd1ae6ae0f4e9b41438aae99d5ea1e9.f907e4316ab299b30579.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/48a32005e0a090c6a21ccca766b7c91a789d5d7c.a1ff3ab71df82395cf95.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/d1c5dcc0bb63f124aea5d611e4e9d342e12907db.902106aebd6d75bcd8cd.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/3a8f64077cb30b3657b9e808edaf0421cc4f3680.4508afb0d3a3bda0ac42.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/8db4a9c0c4c72ed7e2af7f37ed6ed196fd917df5.1480c49ac244a49118a7.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/bf240ec8346ec7915119adf045cb55a20052cf37.2406191d145a6869f971.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/31.d3c74d9534ab8b2b2c65.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/index-e35451d293b522761a61.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/_buildManifest.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/_ssgManifest.js.download" async=""></script><script src="./C - OneCompiler - Write, run and share C code online_files/web-frameworks-ad0cfb50a78f13e95a26.js.download"></script><script src="./C - OneCompiler - Write, run and share C code online_files/374be9c8023f7e42a501683007a11e70befca1c1.28f550708da1252b4b47.js.download"></script><script src="./C - OneCompiler - Write, run and share C code online_files/contact-931347b0c9a1059f59d7.js.download"></script><script src="./C - OneCompiler - Write, run and share C code online_files/about-6c600553e466c777bb47.js.download"></script><script src="./C - OneCompiler - Write, run and share C code online_files/cheatsheets-8c905e3f8aab7a9afa76.js.download"></script><script src="./C - OneCompiler - Write, run and share C code online_files/19790f41f559b1486f4bd4417e70ebb40c7a70fd.643930d69d1357f74813.js.download"></script><script src="./C - OneCompiler - Write, run and share C code online_files/users-6f1f96ec4529baac1cdf.js.download"></script><script src="./C - OneCompiler - Write, run and share C code online_files/tutorials-9b4fa999dbc242eb6812.js.download"></script><script src="./C - OneCompiler - Write, run and share C code online_files/stats-a0db8e17ca9db0116c84.js.download"></script><script src="./C - OneCompiler - Write, run and share C code online_files/tools-0d526729769b8f144e4b.js.download"></script><script src="./C - OneCompiler - Write, run and share C code online_files/cheatsheet-1c9a67067df0f94e04e5.js.download"></script><script src="./C - OneCompiler - Write, run and share C code online_files/7d27868fcc2481b6cdb8d13a2127b6478eccf9ea.cea336809ee04cd052e9.js.download"></script><script src="./C - OneCompiler - Write, run and share C code online_files/privacy-policy-93c2e3c9940824f51005.js.download"></script></body></html>

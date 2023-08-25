@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Navigation menu</title>
+   <style>
+      .navbar {
+         background-color: rgb(0, 0, 0);
+         height: 30px;
+         border-radius: 6px;
+      }
+
+      .navbar ul {
+         /* overflow: auto; */
+         padding: 5px;
+      }
+
+
+
+      .navbar li {
+         float: left;
+         list-style: none;
+         margin: 3px 16px;
+      }
+
+      .navbar li a {
+         padding: 5px;
+         text-decoration: none;
+         color: aliceblue;
+      }
+
+      .navbar a:hover {
+         background-color: red;
+
+      }
+
+      #search {
+         float: right;
+      }
+      
+   </style>
+</head>
+
+<body>
+   <header>
+      <nav class="navbar">
+         <ul>
+            <li><a href="www.google.com">Google</a></li>
+            <li><a href="www.facbook.com">Facebook</a></li>
+            <li><a href="www.whatsapp.com">whatsapp</a></li>
+            <li><a href="www.mail.com">Mail</a></li>
+            <div id="search">
+               <input type="text" name="name" id="id" placeholder="Search here">
+            </div>
+         </ul>
+      </nav>
+   </header>
+</body>
+
+</html>

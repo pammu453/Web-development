@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //cookie size 4kb
+
+        //cookies are key=value;  this type
+        console.log(document.cookie);
+        document.cookie="harry=1212341241";  //this will add new cookie to old cockie
+        document.cookie="h1=harry121";
+        document.cookie="h2=harry12123"; //it removes prevoius one if intial character are same
+
+        let key=prompt("Enter key :")
+        let value=prompt("Enter value :")
+        document.cookie=`${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+  
+        // document.cookie="harry12124";
+
+        console.log(document.cookie);
+    </script>
+</body>
+</html>
